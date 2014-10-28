@@ -26,12 +26,9 @@
         
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-navbar-collapse">
-                <ul class="nav navbar-nav nav-pills">
-                    <li class="active"><a href="#">Projects</a></li>
-                    <li><a href="#">Issues</a></li>
-                    <li><a href="#">Resolution</a></li>
-                </ul><!--/navbar-nav -->
-            
+                
+                <?php $this->widget('application.widgets.MainMenu');?>
+                            
             <ul class="nav navbar-nav navbar-right">
 
                 <li class="dropdown">

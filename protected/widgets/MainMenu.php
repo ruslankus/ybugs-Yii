@@ -10,10 +10,6 @@ class MainMenu extends CWidget {
 
         //Menu array
         $menu=array(
-            array('name' => 'Users', 'controller' => 'users', 'action' => 'index', 'roles' => array(3)),
-            array('name' => 'Language settings', 'controller' => 'languages', 'action' => 'index', 'roles' => array(3)),
-            array('name' => 'Logout', 'controller' => 'main', 'action' => 'logout', 'roles' => array(1,2,3)),
-
             array('name' => 'Projects', 'controller' => 'projects', 'action' => 'index', 'roles' => array(1,2,3)),
             array('name' => 'Issues', 'controller' => 'issues', 'action' => 'index', 'roles' => array(1,2,3)),
             array('name' => 'Resolutions', 'controller' => 'resolutions', 'action' => 'index', 'roles' => array(1,2,3))
