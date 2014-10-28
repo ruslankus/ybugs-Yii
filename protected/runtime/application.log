@@ -1,0 +1,62 @@
+2014/10/28 21:58:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ru/css/style.css".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('ru/css/style.cs...')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ru/css/style.css
+HTTP_REFERER=http://ybugs.local/ru/languages
+---
+2014/10/28 21:58:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ru/js/jquery-1.9.0.min.js".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('ru/js/jquery-1....')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ru/js/jquery-1.9.0.min.js
+HTTP_REFERER=http://ybugs.local/ru/languages
+---
+2014/10/28 21:58:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ru/js/bootstrap.js".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('ru/js/bootstrap...')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ru/js/bootstrap.js
+HTTP_REFERER=http://ybugs.local/ru/languages
+---
+2014/10/28 21:58:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ru/css/bootstrap.css".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('ru/css/bootstra...')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ru/css/bootstrap.css
+HTTP_REFERER=http://ybugs.local/ru/languages
+---
+2014/10/28 21:58:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ru/images/logo.svg".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('ru/images/logo....')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ru/images/logo.svg
+HTTP_REFERER=http://ybugs.local/ru/languages
+---
+2014/10/28 21:58:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/10/28 22:01:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ru/images/logo.svg".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('ru/images/logo....')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ru/images/logo.svg
+HTTP_REFERER=http://ybugs.local/ru/languages
+---

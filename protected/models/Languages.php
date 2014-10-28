@@ -117,9 +117,11 @@ class Languages extends CActiveRecord
         Yii::app()->request->cookies['language'] = new CHttpCookie('lng', $lng);
 
         /* if user has language - set it*/
-        if (Yii::app()->user->hasState('language')){Yii::app()->language = Yii::app()->user->getState('language');}
-
-        /* if not, but if have in cookie - set from cookie */
-        elseif(isset(Yii::app()->request->cookies['language'])){Yii::app()->language = Yii::app()->request->cookies['language']->value;}
+        if (Yii::app()->user->hasState('language')){
+            
+            Yii::app()->language = Yii::app()->user->getState('language');
+            
+        }elseif(isset(Yii::app()->request->cookies['language'])){
+            Yii::app()->language = Yii::app()->request->cookies['language']->value;}
     }
 }

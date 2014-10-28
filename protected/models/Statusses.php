@@ -106,7 +106,7 @@ class Statusses extends CActiveRecord
             $limit = 9999;
         }
 
-        $sql = "SELECT * FROM ".$this->tableName()." LIMIT ".$limit." OFFSET ".$offset."";
+        $sql = "SELECT * FROM ".$this->tableName()." LIMIT ".(int)$limit." OFFSET ".(int)$offset."";
         $connection = Yii::app()->getDb();
 
         $data = $connection->createCommand($sql)->queryAll(true);
