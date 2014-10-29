@@ -14,3 +14,12 @@
         </li>
     <?php endforeach; ?>
 </ul>
+
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">LT<span class="caret"></span></a>
+    
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">RU</a></li>
+            <li><a href="#">EN</a></li>
+        </ul><!--/dropdown-menu -->
+    </li><!--/dropdown -->

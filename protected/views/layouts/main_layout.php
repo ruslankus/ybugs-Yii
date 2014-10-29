@@ -31,14 +31,7 @@
                             
             <ul class="nav navbar-nav navbar-right">
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">LT<span class="caret"></span></a>
-                
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">RU</a></li>
-                        <li><a href="#">EN</a></li>
-                    </ul><!--/dropdown-menu -->
-                </li><!--/dropdown -->
+                <?php $this->widget('application.widgets.LngMenu');?>
             
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user">&nbsp;</span>Hello Vasia <span class="caret"></span></a>

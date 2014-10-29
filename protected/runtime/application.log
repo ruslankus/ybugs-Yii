@@ -60,3 +60,32 @@ Stack trace:
 REQUEST_URI=/ru/images/logo.svg
 HTTP_REFERER=http://ybugs.local/ru/languages
 ---
+2014/10/29 17:09:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/10/29 17:19:17 [error] [php] include(ExtLng.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\OpenServer\domains\ybugs.local\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\protected\widgets\LngMenu.php(13): spl_autoload_call()
+#1 C:\OpenServer\domains\ybugs.local\framework\web\CBaseController.php(173): LngMenu->run()
+#2 C:\OpenServer\domains\ybugs.local\protected\views\layouts\main_layout.php(34): MainController->widget()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CBaseController.php(126): require()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CBaseController.php(95): MainController->renderInternal()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(784): MainController->renderFile()
+#6 C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php(10): MainController->render()
+#7 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#8 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): MainController->runAction()
+#10 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): MainController->runActionWithFilters()
+#11 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): MainController->run()
+#12 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/ru
+in C:\OpenServer\domains\ybugs.local\protected\widgets\LngMenu.php (13)
+in C:\OpenServer\domains\ybugs.local\protected\views\layouts\main_layout.php (34)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php (10)
