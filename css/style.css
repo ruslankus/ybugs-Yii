@@ -38,7 +38,19 @@ header > nav.navbar {
 	
 .navbar-header a.navbar-brand:hover {
 	background-color:#FFFFFF;}
+
+#lng-list > a {
+	text-transform:uppercase;}
 	
+#lng-list > ul > li > a {
+        font-size: 17px;
+	text-transform:uppercase;}
+
+#lng-list .dropdown-menu {
+	min-width:40px}	
+	
+#lng-list .dropdown-menu > li > a {
+	padding: 10px 18px;}	
 /*---- activities ------*/
 .act {
 	background-color:white;
