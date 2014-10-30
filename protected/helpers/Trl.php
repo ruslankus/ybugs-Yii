@@ -6,6 +6,7 @@ class Trl
 {
     private static $_instanse = false;   
     private $_arrLabels = array();
+    private $_arrMessages = array();
     
     public static function t(){
         if(!self::$_instanse){
@@ -17,6 +18,7 @@ class Trl
     private function __construct() {
         $currLng = Yii::app()->language;
         $this->_arrLabels = ExtLabels::model()->getLabels($currLng);
+        $this->_arrMessages = ExtMessage::model()->getMessage($currLng);
     }
         
     private function __clone(){}
@@ -28,7 +30,17 @@ class Trl
         }else{
             return $labelName;  
         }
-    }
+    }//getLabel
+    
+    
+    public function getMsg($message){
+        
+        if(array_key_exists($message,$this->_arrMessages)){
+            return $this->_arrMessages[$message];
+        }else{
+            return $message;  
+        }
+    }//getMessage
  
     
 }

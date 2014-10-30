@@ -16,7 +16,7 @@ class LanguageForm extends CFormModel
     public function attributeLabels()
     {
         return array(
-            'name' => Translations::getFor('Language name'),
+            'name' => Translations::getFor  ('Language name'),
             'prefix' => Translations::getFor('Short prefix for URL'),
             'status' => Translations::getFor('Status'),
         );

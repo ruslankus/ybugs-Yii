@@ -21,7 +21,7 @@ class LoginForm extends CFormModel
 	{
         return array(
             // username and password are required
-            array('username, password', 'required','message'=> 'fill the field . "{attribute}"'),
+            array('username, password', 'required','message'=> Trl::t()->getMsg('fill the field') . '"{attribute}"'),
             // password needs to be authenticated
             array('password', 'authenticate'),
         );
@@ -48,9 +48,9 @@ class LoginForm extends CFormModel
             $this->_identity=new UserIdentity($this->username,$this->password);
             if(!$this->_identity->authenticate())
             {
-                if($this->_identity->errorCode == UserIdentity::ERROR_PASSWORD_INVALID){$this->addError('password',Translations::getFor('Incorrect password'));}
-                elseif($this->_identity->errorCode == UserIdentity::ERROR_USERNAME_INVALID){$this->addError('username',Translations::getFor('User not exist'));}
-                elseif($this->_identity->errorCode == UserIdentity::ERROR_UNKNOWN_IDENTITY){$this->addError('username',Translations::getFor('Unknown error. Authentication failed'));}
+                if($this->_identity->errorCode == UserIdentity::ERROR_PASSWORD_INVALID){$this->addError('password',Trl::t()->getMsg('Incorrect password'));}
+                elseif($this->_identity->errorCode == UserIdentity::ERROR_USERNAME_INVALID){$this->addError('username',Trl::t()->getMsg('User not exist'));}
+                elseif($this->_identity->errorCode == UserIdentity::ERROR_UNKNOWN_IDENTITY){$this->addError('username',Trl::t()->getMsg('Unknown error. Authentication failed'));}
             }
         }
     }

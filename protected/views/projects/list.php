@@ -1,15 +1,15 @@
 <?php /* @var $this ProjectsController */ ?>
 <?php /* @var $projects Projects[] */ ?>
 
-<p><?php echo Translations::getFor('Available projects'); ?></p>
+<p><?php echo  Trl::t()->getLabel('Available projects'); ?></p>
 <table border="1">
     <tr>
         <td>#</td>
-        <td><?php echo Translations::getFor("Name"); ?></td>
-        <td><?php echo Translations::getFor("Description"); ?></td>
-        <td><?php echo Translations::getFor("Users"); ?></td>
-        <td><?php echo Translations::getFor("Developers"); ?></td>
-        <td><?php echo Translations::getFor("Actions"); ?></td>
+        <td><?php echo Trl::t()->getLabel("Name"); ?></td>
+        <td><?php echo Trl::t()->getLabel("Description"); ?></td>
+        <td><?php echo Trl::t()->getLabel("Users"); ?></td>
+        <td><?php echo Trl::t()->getLabel("Developers"); ?></td>
+        <td><?php echo Trl::t()->getLabel("Actions"); ?></td>
     </tr>
 <?php foreach($projects as $nr => $project): ?>
     <tr>
@@ -20,7 +20,7 @@
         <td><?php echo count($project->getMembers(2)); ?></td>
         <td>
             <?php if(Yii::app()->user->getState('role') != 1): ?>
-                <a href="<?php echo Yii::app()->createUrl('/projects/del',array('id' => $project->id)); ?>"><?php echo Translations::getFor('Delete'); ?></a>
+                <a href="<?php echo Yii::app()->createUrl('/projects/del',array('id' => $project->id)); ?>"><?php echo  Trl::t()->getLabel('Delete'); ?></a>
             <?php endif; ?>
         </td>
     </tr>
@@ -29,5 +29,5 @@
 
 
 <?php if(Yii::app()->user->getState('role') == 3): ?>
-    <a href="<?php echo Yii::app()->createUrl('/projects/add'); ?>"><?php echo Translations::getFor('Add project'); ?></a>
+    <a href="<?php echo Yii::app()->createUrl('/projects/add'); ?>"><?php echo  Trl::t()->getLabel('Add project'); ?></a>
 <?php endif; ?>
