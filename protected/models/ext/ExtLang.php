@@ -4,9 +4,9 @@ class ExtLang extends Languages
 {
     
     public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+    {
+        return parent::model($className);
+    }
     
     
     public function getAllLang($currLng = 'en') {
