@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="/images/logo.svg" width="100px" height="40px" ></a>
+                <a class="navbar-brand" href="/<?php echo Yii::app()->language; ?>"><img src="/images/logo.svg" width="100px" height="40px" ></a>
             </div><!--/navbar-header -->
         
             <!-- Collect the nav links, forms, and other content for toggling -->
