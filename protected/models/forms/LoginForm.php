@@ -21,7 +21,7 @@ class LoginForm extends CFormModel
 	{
         return array(
             // username and password are required
-            array('username, password', 'required','message'=> Translations::getFor('fill the field').' "{attribute}"'),
+            array('username, password', 'required','message'=> 'fill the field . "{attribute}"'),
             // password needs to be authenticated
             array('password', 'authenticate'),
         );
@@ -31,8 +31,8 @@ class LoginForm extends CFormModel
     public function attributeLabels()
     {
         return array(
-            'username' => Translations::getFor('Login'),
-            'password' => Translations::getFor('Password')
+            'username' => Trl::t()->getLabel('login'),
+            'password' => Trl::t()->getLabel('password')
         );
     }
 

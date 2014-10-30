@@ -16,7 +16,7 @@ class MainController extends Controller
     public function actionLogin()
     {
         //set titles
-        $this->title = Translations::getFor('Please login');
+        $this->title = 'Please login';
 
         //redefine layout
         $this->layout = '//layouts/login_layout';
