@@ -52,13 +52,9 @@
 	<div class="container-fluid">
     	<div class="row">
             
-        	<aside class="col-md-2 list-projects">
+            <aside class="col-md-2 list-projects">
             	<h4>Your projects</h4>
-                <ul>
-                	<li><a href="#">Project 1</a></li>
-                	<li class="active"><a href="#">Project 2</a></li>
-                	<li><a href="#">Project 3</a></li>
-                </ul>
+                <?php $this->widget('application.widgets.AsideMenu');?>
             </aside>
             <div class="col-md-10" id="main-content-holder">
                 
