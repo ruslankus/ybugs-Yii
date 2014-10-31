@@ -10,7 +10,7 @@ class IssueForm extends CFormModel
         return array(
 
             //description of issue required
-            array('description', 'required','message'=> Translations::getFor('Description not set')),
+            array('description', 'required','message'=> Trl::t()->getMsg('Description not set')),
 
             // rules for file(picture) validation
             array(
@@ -30,8 +30,8 @@ class IssueForm extends CFormModel
     public function attributeLabels()
     {
         return array(
-            'description' => Translations::getFor('Problem explanation'),
-            'files' => Translations::getFor('Picture of error'),
+            'description' => Trl::t()->getLabel('Problem explanation'),
+            'files' => Trl::t()->getLabel('Picture of error'),
         );
     }
 }
