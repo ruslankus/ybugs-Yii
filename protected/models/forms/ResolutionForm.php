@@ -8,15 +8,15 @@ class ResolutionForm extends CFormModel
     public function rules()
     {
         return array(
-            array('description, issue_status', 'required','message'=> Translations::getFor('Please assign value to').' "{attribute}"'),
+            array('description, issue_status', 'required','message'=> Trl::t()->getMsg('Please assign value to').' "{attribute}"'),
         );
     }
 
     public function attributeLabels()
     {
         return array(
-            'description' => Translations::getFor('Resolution description'),
-            'issue_status' => Translations::getFor('Status of issue'),
+            'description' => Trl::t()->getLabel('Resolution description'),
+            'issue_status' => Trl::t()->getLabel('Status of issue'),
         );
     }
 }
