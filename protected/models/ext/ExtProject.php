@@ -32,6 +32,7 @@ class ExtProject extends Projects
             WHERE pr.id = ".(int)$id;
 	
         $con = $this->dbConnection;
+        //getting projects array
         $dataPrj=$con->createCommand($sql)->queryRow();
         
         $sql = "SELECT iss.description,iss.title,iss.id,
@@ -41,7 +42,7 @@ class ExtProject extends Projects
             JOIN statusses st ON iss.status_id = st.id
             JOIN users usr ON iss.user_id = usr.id
             WHERE iss.project_id = ".(int)$id;
-        
+        //getting issues array
         $dataIss=$con->createCommand($sql)->queryAll();
         $dataPrj['issues'] = $dataIss;
         
