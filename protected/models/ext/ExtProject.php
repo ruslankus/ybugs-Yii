@@ -27,17 +27,25 @@ class ExtProject extends Projects
     
     public function getProject($id){
         
-        $sql = "SELECT *, 
-	CONCAT(issues.description) as issues
-            FROM projects pr
-            JOIN issues
-            ON issues.project_id = pr.id
+        $sql = "SELECT *	
+            FROM projects pr             
             WHERE pr.id = ".(int)$id;
 	
-        $con = Yii::app()->bugs_db;
-        $data=$con->createCommand($sql)->queryAll();
-        Debug::d($data);
-        return $data;
+        $con = $this->dbConnection;
+        $dataPrj=$con->createCommand($sql)->queryRow();
+        
+        $sql = "SELECT iss.description,iss.title,iss.id,
+            st.name AS status,usr.name AS fname,
+            usr.surname AS lname
+            FROM issues iss
+            JOIN statusses st ON iss.status_id = st.id
+            JOIN users usr ON iss.user_id = usr.id
+            WHERE iss.project_id = ".(int)$id;
+        
+        $dataIss=$con->createCommand($sql)->queryAll();
+        $dataPrj['issues'] = $dataIss;
+        
+        return $dataPrj;
     }
     
     

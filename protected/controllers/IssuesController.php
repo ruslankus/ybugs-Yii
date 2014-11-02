@@ -18,12 +18,14 @@ class IssuesController extends Controller
     {
         if(!empty($id)){
             
-            $data = ExtProject::model()->getProject($id);            
+            $arrPrj = ExtProject::model()->getProject($id); 
+            
+            $this->render('list',array('arrPrj' => $arrPrj));
+
         }
 
         
         //render list
-        $this->render('list',array('issues' => $issues, 'project' => $project, 'testers' => $testers, 'developers' => $developers));
     }
 
 
