@@ -16,28 +16,12 @@ class IssuesController extends Controller
      */
     public function actionList($id = null)
     {
-        /* @var $project Projects */
-
-        //if should filter by project
-        if($id != null)
-        {
-            //find project and all its members
-            $project = Projects::model()->findByPk($id);
-            $testers = $project->getMembers(1);
-            $developers = $project->getMembers(2);
-        }
-        //if shouldn't filter
-        else
-        {
-            //leave them empty
-            $project = null;
-            $testers = array();
-            $developers = array();
+        if(!empty($id)){
+            
+            $data = ExtProject::model()->getProject($id);            
         }
 
-        //get all issues (by project if ID set)
-        $issues = Issues::model()->listAllIssues($project->id);
-
+        
         //render list
         $this->render('list',array('issues' => $issues, 'project' => $project, 'testers' => $testers, 'developers' => $developers));
     }

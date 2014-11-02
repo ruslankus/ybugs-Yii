@@ -1,3 +1,4 @@
+<div class="col-md-10" id="main">
 <div class="col-md-12 btn-holder text-right">
                     <a class="btn btn-lg btn-success"><span class="glyphicon glyphicon-plus">&nbsp;</span>Create issue</a>            
                 </div>
@@ -144,3 +145,4 @@
                     
                 </div><!--/act-holder -->
                 
+</div><!--/ main -->               

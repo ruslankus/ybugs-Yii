@@ -1,64 +1,151 @@
-<?php /* @var $issues array */ ?>
-<?php /* @var $project Projects */ ?>
+            <div class="col-md-10 content-holder" id="project">
+            	<h4><span>Project name:</span> <span>Безумный Вася смерти 1</span></h4>
+                <div class="users">	
+                	<p><span>Разработчики:</span> <span>Вася Пупкин, Лена Петрова, Жана Фриске, Жан Клод Вандамм</span></p>
+                    
+                    <p><span>Пользователи:</span> <span>Вася Пупкин, Лена Петрова, Жана Фриске, Жан Клод Вандамм, Вася Пупкин, Лена Петрова, </span></p>
+                </div>    
+                
+                <div class="act-holder">
+                	<h4>Последние события:</h4>
+                	<div class="act">
+                    	<div class="act-top clearfix">
+                        	<div class="act-top-info">
+                            	<p>#23456789777</p>
+                                <p class="new"> NEW </p>
+                            </div><!--/act-top-info -->
+                            <div class="act-top-head">
+                            	<h3>Любя, съешь щипцы</h3>
+                                <p>Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) — вдрызг! </p>
+                            </div><!--/act-top-head -->
+                            <div class="act-top-time">
+                            	<p><span>Last uptades</span> <span>21.10.2014</span></p>
+                            </div><!--/act-top-time -->
+                        </div><!--/act-top -->
+                        <div class="act-bottom clearfix">
+                        	<div class="act-link-holder">
+                            	<a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            	<a href="#"><span class="glyphicon glyphicon-warning-sign"></span></a>
+                            	<a href="#"><span class="glyphicon glyphicon-star-empty"></span></a>
+                            </div><!--/act-link-holder -->
+                            <div class="act-bottom-div">
+                            	<span>assigned:</span>
+                                <span>V.pupkin</span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-div">
+                            	<span>rised:</span>
+                                <span>V.pupkin</span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-div">
+                            	<span>prioryty:</span>
+                                <span><strong>hight</strong></span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-cat">
+                            	<span>Category:</span>
+                                <span class="text-capitalize">Category support</span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-div">
+                            	<span>due in:</span>
+                                <span>21 days</span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-div">
+                            	<span class="glyphicon glyphicon-asterisk"></span>
+                            </div><!--/act-bottom-asign -->
+                        </div><!--/act-bottom -->
+                    </div><!--/act -->
+                    
+                	<div class="act">
+                    	<div class="act-top clearfix">
+                        	<div class="act-top-info">
+                            	<p>#23456789777</p>
+                                <p class="solved"> SOLVED </p>
+                            </div><!--/act-top-info -->
+                            <div class="act-top-head">
+                            	<h3>Любя, съешь щипцы</h3>
+                                <p>Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) — вдрызг! </p>
+                            </div><!--/act-top-head -->
+                            <div class="act-top-time">
+                            	<p><span>Last uptades</span> <span>21.10.2014</span></p>
+                            </div><!--/act-top-time -->
+                        </div><!--/act-top -->
+                        <div class="act-bottom clearfix">
+                        	<div class="act-link-holder">
+                            	<a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            	<a href="#"><span class="glyphicon glyphicon-warning-sign"></span></a>
+                            	<a href="#"><span class="glyphicon glyphicon-star-empty"></span></a>
+                            </div><!--/act-link-holder -->
+                            <div class="act-bottom-div">
+                            	<span>assigned:</span>
+                                <span>V.pupkin</span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-div">
+                            	<span>rised:</span>
+                                <span>V.pupkin</span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-div">
+                            	<span>prioryty:</span>
+                                <span><strong>hight</strong></span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-cat">
+                            	<span>Category:</span>
+                                <span class="text-capitalize">Category support</span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-div">
+                            	<span>due in:</span>
+                                <span>21 days</span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-div">
+                            	<span class="glyphicon glyphicon-asterisk"></span>
+                            </div><!--/act-bottom-asign -->
+                        </div><!--/act-bottom -->
+                    </div><!--/act -->
+                    
+                	<div class="act">
+                    	<div class="act-top clearfix">
+                        	<div class="act-top-info">
+                            	<p>#23456789777</p>
+                                <p class="onhold"> ON HOLD </p>
+                            </div><!--/act-top-info -->
+                            <div class="act-top-head">
+                            	<h3>Любя, съешь щипцы</h3>
+                                <p>Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) — вдрызг! </p>
+                            </div><!--/act-top-head -->
+                            <div class="act-top-time">
+                            	<p><span>Last uptades</span> <span>21.10.2014</span></p>
+                            </div><!--/act-top-time -->
+                        </div><!--/act-top -->
+                        <div class="act-bottom clearfix">
+                        	<div class="act-link-holder">
+                            	<a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            	<a href="#"><span class="glyphicon glyphicon-warning-sign"></span></a>
+                            	<a href="#"><span class="glyphicon glyphicon-star-empty"></span></a>
+                            </div><!--/act-link-holder -->
+                            <div class="act-bottom-div">
+                            	<span>assigned:</span>
+                                <span>V.pupkin</span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-div">
+                            	<span>rised:</span>
+                                <span>V.pupkin</span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-div">
+                            	<span>prioryty:</span>
+                                <span><strong>hight</strong></span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-cat">
+                            	<span>Category:</span>
+                                <span class="text-capitalize">Category support</span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-div">
+                            	<span>due in:</span>
+                                <span>21 days</span>
+                            </div><!--/act-bottom-asign -->
+                            <div class="act-bottom-div">
+                            	<span class="glyphicon glyphicon-asterisk"></span>
+                            </div><!--/act-bottom-asign -->
+                        </div><!--/act-bottom -->
+                    </div><!--/act -->
+                    
+                </div><!--/act-holder -->
+            </div><!--/project -->
 
-<?php /* @var $testers Users[] */ ?>
-<?php /* @var $developers Users[] */ ?>
-
-<?php if(!empty($project)): ?>
-    <p>
-        <?php echo  Trl::t()->getLabel('Project'); ?>:<br>
-        <?php echo $project->description; ?><br><br>
-        <?php echo  Trl::t()->getLabel('Developers of project'); ?>:<br>
-    </p>
-    <ul>
-        <?php foreach($developers as $developer): ?>
-            <li><?php echo $developer->name.' '.$developer->surname; ?></li>
-        <?php endforeach; ?>
-    </ul>
-
-    <p>
-        <?php echo  Trl::t()->getLabel('Users/testers of project'); ?>:
-    </p>
-    <ul>
-        <?php foreach($testers as $tester): ?>
-            <li><?php echo $tester->name.' '.$tester->surname; ?></li>
-        <?php endforeach; ?>
-    </ul>
-<?php else: ?>
-    <p><?php echo Trl::t()->getLabel('All issues'); ?></p>
-<?php endif; ?>
-
-
-<hr>
-<table border="1">
-    <tr>
-        <td><?php echo Trl::t()->getLabel("Id"); ?></td>
-        <td><?php echo Trl::t()->getLabel("Description"); ?></td>
-        <td><?php echo Trl::t()->getLabel("Date"); ?></td>
-        <td><?php echo Trl::t()->getLabel("Picture"); ?></td>
-        <td><?php echo Trl::t()->getLabel("Added by"); ?></td>
-        <td><?php echo Trl::t()->getLabel("Status"); ?></td>
-        <td><?php echo Trl::t()->getLabel("Resolutions"); ?></td>
-    </tr>
-    <?php foreach($issues as $nr => $issue): ?>
-        <tr>
-            <td><?php echo $issue['id']; ?></td>
-            <td><?php echo $issue['description']; ?></td>
-            <td><?php echo date('Y.m.d',$issue['date']); ?></td>
-            <td>
-                <?php if($issue['picture'] != ''): ?>
-                    <a href="/images/uploaded/<?php echo $issue['picture']; ?>" target="_blank"><?php echo Trl::t()->getLabel('Show'); ?></a>
-                <?php else: ?>
-                    <?php echo  Trl::t()->getLabel('No picture'); ?>
-                <?php endif; ?>
-            </td>
-            <td><?php echo $issue['user_name']." ".$issue['user_surname']; ?></td>
-            <td><?php echo Trl::t()->getLabel($issue['status_name']); ?></td>
-            <td><a href="<?php echo $this->createUrl('/resolutions/list/',array('id' => $issue['id'])); ?>"><?php echo Trl::t()->getLabel('Show'); ?></a></td>
-        </tr>
-    <?php endforeach; ?>
-</table>
-
-<?php if(!empty($project)): ?>
-    <a href="<?php echo Yii::app()->createUrl('/issues/add',array('id' => $project->id)); ?>"><?php echo  Trl::t()->getLabel('Add new issue'); ?></a>
-<?php endif; ?>

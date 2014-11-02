@@ -22,7 +22,23 @@ class ExtProject extends Projects
         $data=$con->createCommand($sql)->queryAll();
         
         return $data;
-    }//getProjects    
+    }//getProjects
+    
+    
+    public function getProject($id){
+        
+        $sql = "SELECT *, 
+	CONCAT(issues.description) as issues
+            FROM projects pr
+            JOIN issues
+            ON issues.project_id = pr.id
+            WHERE pr.id = ".(int)$id;
+	
+        $con = Yii::app()->bugs_db;
+        $data=$con->createCommand($sql)->queryAll();
+        Debug::d($data);
+        return $data;
+    }
     
     
 }

@@ -48,11 +48,9 @@
             	<h4>Your projects</h4>
                 <?php $this->widget('application.widgets.AsideMenu');?>
             </aside>
-            <div class="col-md-10" id="main-content-holder">
-                
-                <?php echo $content;?>
-                
-            </div><!--/main-content-holder -->
+            <!--/ main content start here -->
+             <?php echo $content;?>   
+            <!--/ main content end here -->
         </div>
     </div>
 </div><!--/main-container -->

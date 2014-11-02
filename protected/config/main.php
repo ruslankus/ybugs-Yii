@@ -64,15 +64,16 @@ return array(
 		),
 
 		// uncomment the following to use a MySQL database
-		/*
-		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
+		
+		'bugs_db'=>array(
+                        'class'=>'CDbConnection',
+			'connectionString' => 'mysql:host=localhost;dbname=bugs',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'bugs',
+			'password' => '12345',
 			'charset' => 'utf8',
 		),
-		*/
+		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
