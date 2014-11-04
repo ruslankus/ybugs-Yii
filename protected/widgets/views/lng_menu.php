@@ -1,6 +1,6 @@
 
-<li class="dropdown" id="lng-list">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $current ?><span class="caret"></span></a>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" id="lang-selector" data-toggle="dropdown"><?php echo $current ?><span class="caret"></span></a>
 
     <ul class="dropdown-menu" role="menu">
     <?php foreach ($arrLngs as $lng):?>    

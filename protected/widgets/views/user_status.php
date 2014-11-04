@@ -1,5 +1,5 @@
 <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    <a href="#" class="dropdown-toggle" id="user-status" data-toggle="dropdown">
         <span class="glyphicon glyphicon-user">&nbsp;</span>
         Hello <?php echo $arrData['name'];?>
         <span class="caret"></span>
