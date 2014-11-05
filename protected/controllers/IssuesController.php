@@ -16,16 +16,26 @@ class IssuesController extends Controller
      */
     public function actionList($id = null)
     {
+        $prefix_lng = Yii::app()->language;
         if(!empty($id)){
             
             $arrPrj = ExtProject::model()->getProject($id); 
             
-            $this->render('list',array('arrPrj' => $arrPrj));
+            $this->render('list',array('arrPrj' => $arrPrj,'prefix_lng' => $prefix_lng));
 
         }
 
         
         //render list
+    }
+    
+    
+    public function actionGetissue($id = null){
+          
+         $prefix_lng = Yii::app()->language;
+         $arrIssue = ExtIssues::model()->getIssue($id);
+         
+         Debug::d($arrIssue);
     }
 
 

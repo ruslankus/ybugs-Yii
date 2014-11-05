@@ -26,7 +26,7 @@
                         </div><!--/act-top -->
                         <div class="act-bottom clearfix">
                         	<div class="act-link-holder">
-                            	<a href="/resolutions/list/<?php echo $row['id']?>"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            	<a href="/<?php echo $prefix_lng ?>/issues/getissue/<?php echo $row['id']?>"><span class="glyphicon glyphicon-eye-open"></span></a>
                             	<a href="#"><span class="glyphicon glyphicon-warning-sign"></span></a>
                             	<a href="#"><span class="glyphicon glyphicon-star-empty"></span></a>
                             </div><!--/act-link-holder -->

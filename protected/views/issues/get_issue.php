@@ -61,4 +61,3 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                     
                 </div><!--/act-holder -->
             </div><!--/issues -->
-

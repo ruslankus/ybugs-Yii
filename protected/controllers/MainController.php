@@ -3,11 +3,15 @@
 class MainController extends Controller
 {
     /**
-     * Entry
+     * Entry point
      */
     public function actionIndex()
     {
-        $this->render('index');
+        $prefix_lng = Yii::app()->language;
+        $userId = Yii::app()->user->id;
+        $arrData = ExtProject::model()->getProjects($userId);
+        
+        $this->render('index',array('arrData' => $arrData,'prefix_lng' => $prefix_lng));
     }
 
     /**
