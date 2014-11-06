@@ -36,7 +36,7 @@ class ExtProject extends Projects
         $dataPrj=$con->createCommand($sql)->queryRow();
         
         $sql = "SELECT iss.description,iss.title,iss.id,
-            st.name AS status,usr.name AS fname,
+            st.name AS status, st.class_name as status_class, usr.name AS fname,
             usr.surname AS lname
             FROM issues iss
             JOIN statusses st ON iss.status_id = st.id
