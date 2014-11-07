@@ -6,16 +6,16 @@ class ExtProject extends Projects
 		return parent::model($className);
 	}
     
-    public function getProjects($user){
+    public function getProjects($user_id, $role = 1){
         
-        if($user == 1){
+        if($role == 3){
             $sql = "SELECT * FROM projects";
         }else{
             
             $sql = "SELECT projects.* FROM projects_to_users pr_to_us
-                        JOIN projects
-                        WHERE pr_to_us.project_id = projects.id
-                        AND pr_to_us.user_id = ".(int)$user;              
+                        JOIN projects ON pr_to_us.project_id = projects.id
+                        WHERE pr_to_us.user_id = ".(int)$user_id;  
+                                    
         }
         
         $con = $this->dbConnection;

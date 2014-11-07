@@ -8,8 +8,10 @@ class MainController extends Controller
     public function actionIndex()
     {
         $prefix_lng = Yii::app()->language;
-        $userId = Yii::app()->user->id;
-        $arrData = ExtProject::model()->getProjects($userId);
+        $user_id = Yii::app()->user->id;
+        $user_role = Yii::app()->user->role;
+        
+        $arrData = ExtProject::model()->getProjects($user_id,$user_role);
         
         $this->render('index',array('arrData' => $arrData,'prefix_lng' => $prefix_lng));
     }

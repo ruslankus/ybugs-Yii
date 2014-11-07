@@ -15,8 +15,13 @@ class ProjectsController extends Controller
      */
     public function actionList()
     {
-        $projects = Projects::model()->getAllProjectsByUser(Yii::app()->user);
-        $this->render('list',array('projects' => $projects));
+       $prefix_lng = Yii::app()->language;
+        $user_id = Yii::app()->user->id;
+        $user_role = Yii::app()->user->role;
+        
+        $arrData = ExtProject::model()->getProjects($user_id,$user_role);
+        
+        $this->render('/main/index',array('arrData' => $arrData,'prefix_lng' => $prefix_lng));
     }
 
 
