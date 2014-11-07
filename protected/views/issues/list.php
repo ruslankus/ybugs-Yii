@@ -10,7 +10,7 @@
                     <div class="clearfix">
                         <div class="col-md-6"><h4>Last issues:</h4></div>
                         <div class="col-md-6">
-                        	<a href="#" class="btn btn-success btn-sm">
+                        	<a href="/issues/add/id/<?php echo  $arrPrj['id']; ?>" class="btn btn-success btn-sm">
                             	<span class="glyphicon glyphicon-plus-sign"></span>
                                 Create issue
                             </a>

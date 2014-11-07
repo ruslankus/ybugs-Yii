@@ -117,3 +117,67 @@ Stack trace:
 REQUEST_URI=/en/projects
 HTTP_REFERER=http://ybugs.local/en/issues/getissue/7
 ---
+2014/11/07 15:24:53 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php:123
+Stack trace:
+#0 [internal function]: IssuesController->actionAdd(NULL)
+#1 C:\OpenServer\domains\ybugs.local\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(IssuesController), Array)
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(IssuesController), Object(ReflectionMethod), Array)
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('add')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('issues/add')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/issues/add
+HTTP_REFERER=http://ybugs.local/en/issues/list/2
+---
+2014/11/07 15:26:19 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php:123
+Stack trace:
+#0 [internal function]: IssuesController->actionAdd(NULL)
+#1 C:\OpenServer\domains\ybugs.local\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(IssuesController), Array)
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(IssuesController), Object(ReflectionMethod), Array)
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('add')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('issues/add')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/issues/add
+HTTP_REFERER=http://ybugs.local/en/issues/list/2
+---
+2014/11/07 15:33:41 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php:123
+Stack trace:
+#0 [internal function]: IssuesController->actionAdd(NULL)
+#1 C:\OpenServer\domains\ybugs.local\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(IssuesController), Array)
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(IssuesController), Object(ReflectionMethod), Array)
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('add')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('issues/add')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/issues/add
+HTTP_REFERER=http://ybugs.local/en/issues/list/2
+---
+2014/11/07 15:33:45 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php:123
+Stack trace:
+#0 [internal function]: IssuesController->actionAdd(NULL)
+#1 C:\OpenServer\domains\ybugs.local\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(IssuesController), Array)
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(IssuesController), Object(ReflectionMethod), Array)
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('add')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('issues/add/2')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/issues/add/2
+HTTP_REFERER=http://ybugs.local/en/issues/list/2
+---

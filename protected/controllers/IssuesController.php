@@ -46,7 +46,7 @@ class IssuesController extends Controller
     public function actionAdd($id = null)
     {
         /* @var $project Projects */
-
+        
         //if id not got from GET
         if($id == null)
         {
