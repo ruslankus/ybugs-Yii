@@ -250,3 +250,63 @@ in /Applications/AMPPS/www/ybugs.local/index.php (13)
 2014/11/09 00:44:39 [warning] [application] Failed to set unsafe attribute "title" of "IssueForm".
 in /Applications/AMPPS/www/ybugs.local/protected/controllers/IssuesController.php (63)
 in /Applications/AMPPS/www/ybugs.local/index.php (13)
+2014/11/09 19:00:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/09 20:24:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/09 20:33:02 [error] [php] Invalid argument supplied for foreach() (/Applications/AMPPS/www/ybugs.local/framework/web/helpers/CHtml.php:2325)
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/protected/views/issues/add.php(28): CActiveForm->dropDownList()
+#1 /Applications/AMPPS/www/ybugs.local/framework/web/CBaseController.php(126): require()
+#2 /Applications/AMPPS/www/ybugs.local/framework/web/CBaseController.php(95): IssuesController->renderInternal()
+#3 /Applications/AMPPS/www/ybugs.local/framework/web/CController.php(869): IssuesController->renderFile()
+#4 /Applications/AMPPS/www/ybugs.local/framework/web/CController.php(782): IssuesController->renderPartial()
+#5 /Applications/AMPPS/www/ybugs.local/protected/controllers/IssuesController.php(109): IssuesController->render()
+#6 unknown(0): IssuesController->actionAdd()
+#7 /Applications/AMPPS/www/ybugs.local/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#8 /Applications/AMPPS/www/ybugs.local/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 /Applications/AMPPS/www/ybugs.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /Applications/AMPPS/www/ybugs.local/framework/web/CController.php(286): IssuesController->runAction()
+#11 /Applications/AMPPS/www/ybugs.local/framework/web/CController.php(265): IssuesController->runActionWithFilters()
+#12 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(282): IssuesController->run()
+#13 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Applications/AMPPS/www/ybugs.local/index.php(13): CWebApplication->run()
+REQUEST_URI=/issues/add/id/1
+in /Applications/AMPPS/www/ybugs.local/protected/views/issues/add.php (28)
+in /Applications/AMPPS/www/ybugs.local/protected/controllers/IssuesController.php (109)
+in /Applications/AMPPS/www/ybugs.local/index.php (13)
+2014/11/09 20:34:26 [error] [php] Invalid argument supplied for foreach() (/Applications/AMPPS/www/ybugs.local/framework/web/helpers/CHtml.php:2325)
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/protected/views/issues/add.php(28): CActiveForm->dropDownList()
+#1 /Applications/AMPPS/www/ybugs.local/framework/web/CBaseController.php(126): require()
+#2 /Applications/AMPPS/www/ybugs.local/framework/web/CBaseController.php(95): IssuesController->renderInternal()
+#3 /Applications/AMPPS/www/ybugs.local/framework/web/CController.php(869): IssuesController->renderFile()
+#4 /Applications/AMPPS/www/ybugs.local/framework/web/CController.php(782): IssuesController->renderPartial()
+#5 /Applications/AMPPS/www/ybugs.local/protected/controllers/IssuesController.php(109): IssuesController->render()
+#6 unknown(0): IssuesController->actionAdd()
+#7 /Applications/AMPPS/www/ybugs.local/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#8 /Applications/AMPPS/www/ybugs.local/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 /Applications/AMPPS/www/ybugs.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /Applications/AMPPS/www/ybugs.local/framework/web/CController.php(286): IssuesController->runAction()
+#11 /Applications/AMPPS/www/ybugs.local/framework/web/CController.php(265): IssuesController->runActionWithFilters()
+#12 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(282): IssuesController->run()
+#13 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Applications/AMPPS/www/ybugs.local/index.php(13): CWebApplication->run()
+REQUEST_URI=/issues/add/id/1
+in /Applications/AMPPS/www/ybugs.local/protected/views/issues/add.php (28)
+in /Applications/AMPPS/www/ybugs.local/protected/controllers/IssuesController.php (109)
+in /Applications/AMPPS/www/ybugs.local/index.php (13)

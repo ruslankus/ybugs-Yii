@@ -24,12 +24,8 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/common.js',CClientScript::POS_E
                 <div class="form-group clearfix">
                     <?php echo $form->label($form_mdl,'priority',array('class'=>'col-md-2'));?>
                     <div class="col-md-9">
-                        <select id="select" class="form-control">
-                            <option><?php echo Trl::t()->getLabel('Select priority') ?></option>
-                            <option>option 1</option>
-                            <option>option 2</option>
-                            <option>option 3</option>
-                        </select>
+                        <?php echo $form->dropDownList($form_mdl,'priority',$arrSelect,
+                                array('id' => 'select','class' => 'form-control'));?>
                         <?php echo $form->error($form_mdl,'priority'); ?>
                     </div>
                 </div>

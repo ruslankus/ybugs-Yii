@@ -48,7 +48,7 @@ class IssuesController extends Controller
          
         //find project by id
         $project = Projects::model()->findByPk((int)$id);
-
+        $arrSelect = ExtPrio::model()->getSelectOpt();    
         //if project exist
         if(!empty($project))
         {
@@ -58,23 +58,23 @@ class IssuesController extends Controller
             //if got POST
             if($_POST['IssueForm'])
             {
-               
+                
                 //get attributes
                 $form->attributes = $_POST['IssueForm'];
-
                 //if valid data given
                 if($form->validate())
                 {
                     //create new issue
                     $issue = new Issues();
+                    $issue->attributes = $form->attributes;
                     $issue -> project_id = $project->id;
                     $issue -> user_id = Yii::app()->user->id;
                     $issue -> status_id = 5; //new
-                    $issue -> description = $form->description;
+                    $issue -> description = $form->description;                     
                     $issue -> date = time();
                     $saved = $issue -> save();
 
-                    //if saved
+                    /* /if saved
                     if($saved)
                     {
                         //get uploaded files
@@ -97,8 +97,8 @@ class IssuesController extends Controller
                                     $issue->update();
                                 }
                             }
-                        }
-                    }
+                        } 
+                    }*/
 
                     //redirect to list of issues filtered by project
                     $this->redirect(Yii::app()->createUrl('/issues/list/',array('id' => $project->id)));
@@ -106,7 +106,7 @@ class IssuesController extends Controller
             }//if($_POST['IssueForm'])
 
             //render form
-            $this->render('add',array('form_mdl' => $form, 'project' => $project));
+            $this->render('add',array('form_mdl' => $form, 'project' => $project,'arrSelect' => $arrSelect));
         }            
         else
         {
