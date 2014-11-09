@@ -45,17 +45,9 @@ class IssuesController extends Controller
      */
     public function actionAdd($id = null)
     {
-        /* @var $project Projects */
-        
-        //if id not got from GET
-        if($id == null)
-        {
-            //get from POST
-            $id = Yii::app()->request->getPost('id',null);
-        }
-
+         
         //find project by id
-        $project = Projects::model()->findByPk($id);
+        $project = Projects::model()->findByPk((int)$id);
 
         //if project exist
         if(!empty($project))
@@ -66,6 +58,7 @@ class IssuesController extends Controller
             //if got POST
             if($_POST['IssueForm'])
             {
+               
                 //get attributes
                 $form->attributes = $_POST['IssueForm'];
 
@@ -110,17 +103,15 @@ class IssuesController extends Controller
                     //redirect to list of issues filtered by project
                     $this->redirect(Yii::app()->createUrl('/issues/list/',array('id' => $project->id)));
                 }
-            }
+            }//if($_POST['IssueForm'])
 
             //render form
             $this->render('add',array('form_mdl' => $form, 'project' => $project));
-        }
-
-        //if project not exist
+        }            
         else
         {
             //exception 404
             throw new CHttpException(404);
-        }
+        }//if project not exist
     }
 }

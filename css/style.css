@@ -176,7 +176,7 @@ div.proj-issues {
 	
 	
 		
-.act , .project {
+.act , .project, .form-holder {
 	background-color:white;
 	margin-bottom:10px;
 	border-radius:5px;
@@ -419,3 +419,77 @@ aside > ul > li {
 	font-size:14px;
 	line-height:20px;}	
 		
+
+/*----- add - issue ------*/
+#add-issue .form-holder > h2 {
+	margin:0;
+	font-size:16px;
+	font-weight:600;
+	color:#004c69;}
+
+.form-holder {
+	padding:20px 30px;}
+	
+.form-holder > form {
+	margin-top:30px;}
+	
+	
+.form-holder .form-group > label {
+	color:#868686;
+	font-size:12px;
+	font-weight:400;}
+	
+.form-holder .form-control {
+	border-radius:0;}
+	
+#title {
+	width:360px;}
+	
+#select {
+	width:210px;}		
+	
+input[type="text"].form-control:focus {
+	color:#2e2e2e;
+	background-color:#f4f8fb;
+	border:1px solid #d2d9de;
+	box-shadow:none;}
+	
+textarea.form-control {
+	min-height:150px;
+	resize:none;}
+		
+.form-group > div {
+	padding-left:0px;}		
+	
+#uploadFile {
+	height:34px;}	
+	
+.fileUpload {
+	position: relative;
+	overflow: hidden;
+	margin: 10px;}
+	
+.fileUpload > span {
+	text-transform:uppercase;}
+
+.fileUpload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);}
+	
+.btn-holder {
+	padding-top:10px;
+	border-top:1px solid #d2d9de;}	
+	
+.btn-holder > button {
+	text-transform:uppercase;}
+	
+.error, .errorMessage {
+	font-size:12px;
+	color:red;}							
