@@ -24,11 +24,11 @@ class ExtIssues extends Issues
         //getting projects array
         $dataIssue=$con->createCommand($sql)->queryRow();
         
-        $sql = "SELECT res.remark, res.date, res.id, users.name, users.surname
-	FROM resolutions res
-	JOIN users ON res.id = users.id
-	WHERE res.issue_id = " . (int)$id;
-        
+        $sql = "SELECT res.*, users.name as fname, users.surname as lname
+            FROM resolutions res
+            JOIN users ON users.id = res.user_id
+            WHERE issue_id = " . (int)$id;
+    
         $dataReslt = $con->createCommand($sql)->queryAll();
         
         $dataIssue['reslt'] = $dataReslt;

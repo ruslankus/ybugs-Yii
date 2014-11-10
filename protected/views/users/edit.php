@@ -13,7 +13,7 @@
 <hr>
 
 <?php echo $form->label($form_mdl,'password'); ?>:<br>
-<?php echo $form->passwordField($form_mdl,'password',array('placeholder' => Translations::getFor('new password')));?>
+<?php echo $form->passwordField($form_mdl,'password',array('placeholder' => Trl::t()->getLabel('new password')));?>
 <?php echo $form->error($form_mdl,'password'); ?>
 
 <hr>

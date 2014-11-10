@@ -23,7 +23,10 @@
                        
                         <div class="form-group clearfix">
                         	<div class="col-md-offset-2 col-md-9 btn-holder">
-                            	<button class="btn btn-sm btn-success" type="submit"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Create issue</button>
+                            	<button class="btn btn-sm btn-success" type="submit">
+                                    <span class="glyphicon glyphicon-plus-sign">&nbsp;</span>
+                                    <?php echo Trl::t()->getLabel('Create resolution');?>
+                                </button>
                             </div>
                         </div>            
                     <?php $this->endWidget();?>

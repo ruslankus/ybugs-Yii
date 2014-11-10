@@ -13,8 +13,8 @@ class UserForm extends CFormModel
 
     public function rules()
     {
-        $creating = array('login, password, name, surname, role', 'required','message'=> Translations::getFor('Please assign value to').' "{attribute}"');
-        $updating = array('login, name, surname, role', 'required','message'=> Translations::getFor('Please assign value to').' "{attribute}"');
+        $creating = array('login, password, name, surname, role', 'required','message'=>  Trl::t()->getMsg('Please assign value to').' "{attribute}"');
+        $updating = array('login, name, surname, role', 'required','message'=>  Trl::t()->getMsg('Please assign value to').' "{attribute}"');
         $unique = array('login, email', 'unique', 'model_class' => 'Users', 'current_id' => $this->currently_updating_user_id);
 
         if($this->currently_updating_user_id == null)
@@ -32,12 +32,12 @@ class UserForm extends CFormModel
     public function attributeLabels()
     {
         return array(
-            'login' => Translations::getFor('Login'),
-            'password' => Translations::getFor('Password'),
-            'name' => Translations::getFor('Name'),
-            'surname' => Translations::getFor('Surname'),
-            'email' => Translations::getFor('Email'),
-            'role' => Translations::getFor('Role of user'),
+            'login' => Trl::t()->getLabel('Login'),
+            'password' => Trl::t()->getLabel('Password'),
+            'name' => Trl::t()->getLabel('Name'),
+            'surname' => Trl::t()->getLabel('Surname'),
+            'email' => Trl::t()->getLabel('Email'),
+            'role' => Trl::t()->getLabel('Role of user'),
         );
     }
 
@@ -71,7 +71,7 @@ class UserForm extends CFormModel
                 if(!($cur_id != null && $cur_id == $obj->getAttribute('id')))
                 {
                     //error
-                    $this->addError($attribute,Translations::getFor($attribute).' '.Translations::getFor('already used'));
+                    $this->addError($attribute,Trl::t()->getLabel($attribute).' '.Trl::t()->getLabel('already used'));
                 }
             }
         }
