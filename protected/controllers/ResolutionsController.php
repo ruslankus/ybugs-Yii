@@ -38,49 +38,46 @@ class ResolutionsController extends Controller
     public function actionAdd($id = null)
     {
         /* @var $issue Issues */
-
+        
         //try find issue by id
-        $issue = Issues::model()->findByPk($id);
-
-        //Only for developers and if issue found by id
-        if(!Yii::app()->user->getState('role') == 2 || empty($issue))
-        {
-            throw new CHttpException(404);
-        }
-
-        $form = new ResolutionForm(); //form validation object
-        $statuses = Statusses::model()->getAllAsArray(4,3); //get array of issue statuses
-
-        if($_POST['ResolutionForm'])
-        {
-            //attributes
-            $form->attributes = $_POST['ResolutionForm'];
-
-            //if form valid
-            if($form->validate())
+        $arrIssue = ExtIssues::model()->getIssueForAddRes($id);
+       
+        if(!empty($arrIssue)){
+            
+            $form = new ResolutionForm(); //form validation object
+            $statuses = Statusses::model()->getAllAsArray(4,3); //get array of issue statuses
+            
+            if($_POST['ResolutionForm'])
             {
-                //create new resolution and save it
-                $resolution = new Resolutions();
-                $resolution -> issue_id = $issue->id;
-                $resolution -> remark = $form->description;
-                $resolution -> date = time();
-                $resolution -> user_id = Yii::app()->user->id;
-                $saved = $resolution -> save();
-
-                //if resolution saved
-                if($saved)
+                //attributes
+                $form->attributes = $_POST['ResolutionForm'];
+                
+                //if form valid
+                if($form->validate())
                 {
-                    //update issue status
-                    $issue->status_id = $form->issue_status;
-                    $issue->update();
+                    //create new resolution and save it
+                    $resolution = new Resolutions();
+                    $resolution -> issue_id = $issue->id;
+                    $resolution -> remark = $form->description;
+                    $resolution -> date = time();
+                    $resolution -> user_id = Yii::app()->user->id;
+                    $saved = $resolution -> save();
+                    
+                                       
+                    //redirect to list
+                    $this->redirect(Yii::app()->createUrl('/issues/list',array('id' => $issue->id,
+                                'language' => Yii::app()->language)));
                 }
-
-                //redirect to list
-                $this->redirect(Yii::app()->createUrl('/resolutions/list',array('id' => $issue->id)));
             }
+            
+            //render form
+            $this->render('add',array('statuses' => $statuses, 'form_mdl' => $form,'arrIssue' => $arrIssue));
+            
+            
+            
+        }else{
+            throw new CHttpException(404,'Wron resolution');
         }
-
-        //render form
-        $this->render('add',array('statuses' => $statuses, 'form_mdl' => $form));
+      
     }
 }

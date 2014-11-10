@@ -335,7 +335,7 @@ aside > ul > li {
 	margin-top:10px;}
 	
 /*----- resoliutions -------*/
-#issues > h5, #issues > h4 {
+#issues > h5, #issues > h4, .descrition > span:first-child {
 	font-size:16px;
 	font-weight:600;
 	color:#868686;}
@@ -351,6 +351,9 @@ aside > ul > li {
 #issues > h5 > span:last-child {
 	font-weight:400;
 	color:#2e2e2e;}
+	
+.descrition > span {
+	display:block;}
 		
 .condition { 	
 	font-size:16px;
@@ -421,7 +424,7 @@ aside > ul > li {
 		
 
 /*----- add - issue ------*/
-#add-issue .form-holder > h2 {
+.form-holder > h2 {
 	margin:0;
 	font-size:16px;
 	font-weight:600;
@@ -492,4 +495,7 @@ textarea.form-control {
 	
 .errorMessage {
 	font-size:12px;
-	color:red;}							
+	color:red;}
+	
+/*----- add resoliution ----*/
+								
