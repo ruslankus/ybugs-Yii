@@ -40,9 +40,12 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/common.js',CClientScript::POS_E
                     <label class="col-md-2">attach file</label>
                     <div class="col-md-9 input-btn">
                         <input id="uploadFile" placeholder="Choose File" disabled="disabled" />
+                        
                         <div class="fileUpload btn btn-sm btn-primary">
                             <span>Upload</span>
-                            <input id="uploadBtn" type="file" class="upload" />
+                            <!--<input id="uploadBtn" type="file" class="upload" /> -->
+                            <?php echo $form->fileField($form_mdl,'files',
+                                    array('id'=> 'uploadBtn','class' => 'upload'));?>
                         </div>	   
                     </div>
                 </div>

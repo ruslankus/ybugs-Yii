@@ -11,11 +11,13 @@ class ExtIssues extends Issues
     public function getIssue($id = null){
         
         $sql = "SELECT iss.title, iss.description, prj.name as project_name, users.name as fname,
-        users.surname as lname, statusses.name as status, statusses.class_name
+        users.surname as lname, statusses.name as status, statusses.class_name,
+        prio.name as prio
             FROM issues iss
             JOIN projects prj ON iss.project_id = prj.id
             JOIN users ON iss.user_id = users.id
             JOIN statusses ON iss.status_id = statusses.id
+			JOIN prio ON iss.prio_id = prio.id
             WHERE iss.id = ".(int)$id;
         
         $con = $this->dbConnection;

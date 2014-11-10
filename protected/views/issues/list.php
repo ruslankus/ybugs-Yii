@@ -31,14 +31,14 @@
                             <div class="act-top-head">
                             	<div class="act-top-title clearfix">
                                 	<div class="col-md-6">
-                            			<h3>Любя, съешь щипцы</h3>
+                            			<h3><?php echo $row['title']?></h3>
                                     </div>
                                     <div class="act-top-time col-md-6">
                                         <p><span>Last uptades</span> <span>21.10.2014</span></p>
                                     </div><!--/act-top-time -->
                                 </div>
                                 
-                                <p>Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) — вдрызг! </p>
+                                <p><?php echo $row['description']; ?></p>
                             </div><!--/act-top-head -->
                         </div><!--/act-top -->
                         <div class="act-bottom clearfix">
@@ -48,8 +48,11 @@
                             	<a href="#"><span class="glyphicon glyphicon-star-empty"></span></a>
                             </div><!--/act-link-holder -->
                             <div class="act-bottom-assigned">
-                            	<span>assigned:</span>
-                                <span>V.pupkin</span>
+                            	<span>Created by:</span>
+                                <span>
+                                    <?php echo $row['fname'][0]; ?>.
+                                    <?php echo $row['lname'];?>
+                                </span>
                             </div><!--/act-bottom-asign -->
                             <div class="act-bottom-rised">
                             	<span>rised:</span>
@@ -57,7 +60,7 @@
                             </div><!--/act-bottom-asign -->
                             <div class="act-bottom-prio">
                             	<span>prioryty:</span>
-                                <span><strong>hight</strong></span>
+                                <span><strong><?php echo $row['prio']; ?></strong></span>
                             </div><!--/act-bottom-asign -->
                             <div class="act-bottom-cat">
                             	<span>Category:</span>

@@ -310,3 +310,17 @@ REQUEST_URI=/issues/add/id/1
 in /Applications/AMPPS/www/ybugs.local/protected/views/issues/add.php (28)
 in /Applications/AMPPS/www/ybugs.local/protected/controllers/IssuesController.php (109)
 in /Applications/AMPPS/www/ybugs.local/index.php (13)
+2014/11/09 22:16:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/09 22:44:45 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in /Applications/AMPPS/www/ybugs.local/protected/controllers/IssuesController.php (69)
+in /Applications/AMPPS/www/ybugs.local/index.php (13)
+2014/11/09 22:44:45 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in /Applications/AMPPS/www/ybugs.local/protected/controllers/IssuesController.php (69)
+in /Applications/AMPPS/www/ybugs.local/index.php (13)

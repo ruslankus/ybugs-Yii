@@ -37,11 +37,13 @@ class ExtProject extends Projects
         
         $sql = "SELECT iss.description,iss.title,iss.id,
             st.name AS status, st.class_name as status_class, usr.name AS fname,
-            usr.surname AS lname
+            usr.surname AS lname,prio.name as prio
             FROM issues iss
             JOIN statusses st ON iss.status_id = st.id
             JOIN users usr ON iss.user_id = usr.id
-            WHERE iss.project_id = ".(int)$id;
+            JOIN prio ON iss.prio_id = prio.id
+            WHERE iss.project_id = ".(int)$id . " ORDER BY iss.id DESC";
+        
         //getting issues array
         $dataIss=$con->createCommand($sql)->queryAll();
         $dataPrj['issues'] = $dataIss;

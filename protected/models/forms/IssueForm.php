@@ -22,7 +22,7 @@ class IssueForm extends CFormModel
                 'types'=>'jpg, gif, png', //available file-types
                 'allowEmpty' =>true, //can be empty
                 'maxSize' => 5000000, //5 mb
-                'maxFiles' => 2, //max count of files
+                'maxFiles' => 1, //max count of files
                 'wrongType' =>  Trl::t()->getMsg('file has wrong type'), //message for wrong-type error
                 'tooLarge' =>  Trl::t()->getMsg('file is too large'), //message for 'too large' error
                 'tooMany' =>  Trl::t()->getMsg('max quantity of files is').' 1', //message for 'too many files' error

@@ -58,7 +58,8 @@ class IssuesController extends Controller
             //if got POST
             if($_POST['IssueForm'])
             {
-                
+                $files = CUploadedFile::getInstances($form,'files');
+                Debug::d($_POST);
                 //get attributes
                 $form->attributes = $_POST['IssueForm'];
                 //if valid data given
@@ -74,7 +75,7 @@ class IssuesController extends Controller
                     $issue -> date = time();
                     $saved = $issue -> save();
 
-                    /* /if saved
+                    //if saved
                     if($saved)
                     {
                         //get uploaded files
@@ -98,7 +99,7 @@ class IssuesController extends Controller
                                 }
                             }
                         } 
-                    }*/
+                    }
 
                     //redirect to list of issues filtered by project
                     $this->redirect(Yii::app()->createUrl('/issues/list/',array('id' => $project->id)));
