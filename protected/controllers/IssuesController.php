@@ -34,8 +34,8 @@ class IssuesController extends Controller
           
          $prefix_lng = Yii::app()->language;
          $arrIssue = ExtIssues::model()->getIssue($id);
-         
-         $this->render('get_issue',array('arrIssue' => $arrIssue));
+        
+         $this->render('get_issue',array('arrIssue' => $arrIssue,'prefix_lng' => $prefix_lng));
     }
 
 
@@ -58,8 +58,7 @@ class IssuesController extends Controller
             //if got POST
             if($_POST['IssueForm'])
             {
-                $files = CUploadedFile::getInstances($form,'files');
-                Debug::d($_POST);
+              
                 //get attributes
                 $form->attributes = $_POST['IssueForm'];
                 //if valid data given
@@ -74,31 +73,23 @@ class IssuesController extends Controller
                     $issue -> description = $form->description;                     
                     $issue -> date = time();
                     $saved = $issue -> save();
-
+                    
+                    //get uploaded file
+                    $file = CUploadedFile::getInstance($form,'files');
                     //if saved
-                    if($saved)
+                    if($saved && !empty($files))
                     {
-                        //get uploaded files
-                        $files = CUploadedFile::getInstances($form,'files');
-
-                        //for each file
-                        foreach($files as $index => $file_obj)
+                         //generate new name for it
+                        $new_name = uniqid('issue_').'.'.$file_obj->extensionName;
+    
+                        //if saved
+                        if($file->saveAs('images/uploaded/'.$new_name))
                         {
-                            //if file exist
-                            if($file_obj->size > 0)
-                            {
-                                //generate new name for it
-                                $new_name = uniqid('issue_').'.'.$file_obj->extensionName;
-
-                                //if saved
-                                if($file_obj->saveAs('images/uploaded/'.$new_name))
-                                {
-                                    //set file-name to issue
-                                    $issue->picture = $new_name;
-                                    $issue->update();
-                                }
-                            }
-                        } 
+                            //set file-name to issue
+                            $issue->picture = $new_name;
+                            $issue->update();
+                        }
+                      
                     }
 
                     //redirect to list of issues filtered by project

@@ -8,7 +8,7 @@ class ResolutionForm extends CFormModel
     public function rules()
     {
         return array(
-            array('description, issue_status', 'required','message'=> Trl::t()->getMsg('Please assign value to').' "{attribute}"'),
+            array('description','required','message'=> Trl::t()->getMsg('Please assign value to').' "{attribute}"'),
         );
     }
 
@@ -16,7 +16,7 @@ class ResolutionForm extends CFormModel
     {
         return array(
             'description' => Trl::t()->getLabel('Resolution description'),
-            'issue_status' => Trl::t()->getLabel('Status of issue'),
+            //'issue_status' => Trl::t()->getLabel('Status of issue'),
         );
     }
 }

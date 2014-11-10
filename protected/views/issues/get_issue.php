@@ -6,11 +6,19 @@
                 <p class="condition"><span>Состояние :</span>&nbsp;
                     <span class="badge <?php echo $arrIssue['class_name']?>"><?php echo $arrIssue['status']?></span>
                 </p>
+                
+                <p class="descrition"><span>Описание проблемы :</span>
+                	<span>
+                    <?php echo $arrIssue['description'];?>    
+                    </span>
+                </p>
+                
+                
                 <div class="res-holder">
                 	<div class="clearfix">
                             <div class="col-md-6"><h4><?php echo Trl::t()->getLabel('resolutions'); ?>:</h4></div>
                         <div class="col-md-6">
-                        	<a href="#" class="btn btn-success btn-sm">
+                        	<a href="/<?php echo $prefix_lng ?>/resolutions/add/<?php echo $arrIssue['id']?>" class="btn btn-success btn-sm">
                             	<span class="glyphicon glyphicon-plus-sign"></span>
                                 Create resolution
                             </a>

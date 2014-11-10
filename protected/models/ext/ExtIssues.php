@@ -11,7 +11,7 @@ class ExtIssues extends Issues
     public function getIssue($id = null){
         
         $sql = "SELECT iss.title, iss.description, prj.name as project_name, users.name as fname,
-        users.surname as lname, statusses.name as status, statusses.class_name,
+        users.surname as lname, statusses.name as status, statusses.class_name,iss.id,
         prio.name as prio
             FROM issues iss
             JOIN projects prj ON iss.project_id = prj.id
@@ -34,4 +34,18 @@ class ExtIssues extends Issues
         $dataIssue['reslt'] = $dataReslt;
         return $dataIssue;      
     }//getIssue
+    
+    
+    public function getIssueForAddRes($id = null){
+        
+        $sql = "SELECT iss.title,iss.description,projects.name as project
+            FROM issues iss
+            JOIN projects ON projects.id = iss.project_id
+            WHERE iss.id = " .(int)$id;
+           
+        $con = $this->dbConnection;
+        //getting projects array
+        $dataIssue = $con->createCommand($sql)->queryRow();
+        return $dataIssue;
+    }
 }
