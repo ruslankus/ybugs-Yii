@@ -32,7 +32,7 @@ class ResolutionsController extends Controller
 
 
     /**
-     * @param null $id
+     * @param issue id $id
      * @throws CHttpException
      */
     public function actionAdd($id = null)
@@ -57,7 +57,7 @@ class ResolutionsController extends Controller
                 {
                     //create new resolution and save it
                     $resolution = new Resolutions();
-                    $resolution -> issue_id = $issue->id;
+                    $resolution -> issue_id = $id;
                     $resolution -> remark = $form->description;
                     $resolution -> date = time();
                     $resolution -> user_id = Yii::app()->user->id;
@@ -65,8 +65,7 @@ class ResolutionsController extends Controller
                     
                                        
                     //redirect to list
-                    $this->redirect(Yii::app()->createUrl('/issues/list',array('id' => $issue->id,
-                                'language' => Yii::app()->language)));
+                    $this->redirect('/'.Yii::app()->language.'/issues/getissue/'.$id);
                 }
             }
             
@@ -76,7 +75,7 @@ class ResolutionsController extends Controller
             
             
         }else{
-            throw new CHttpException(404,'Wron resolution');
+            throw new CHttpException(404,'Wrong resolution');
         }
       
     }

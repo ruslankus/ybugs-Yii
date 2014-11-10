@@ -34,7 +34,7 @@ class IssuesController extends Controller
           
          $prefix_lng = Yii::app()->language;
          $arrIssue = ExtIssues::model()->getIssue($id);
-        
+         Debug::d($arrIssue);   
          $this->render('get_issue',array('arrIssue' => $arrIssue,'prefix_lng' => $prefix_lng));
     }
 
