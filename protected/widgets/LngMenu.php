@@ -11,6 +11,7 @@ class LngMenu extends CWidget
         
         $arrLngs = ExtLang::model()->getAllLang($current_lng);
         
-        $this->render('lng_menu',array('current' => $current_lng, 'controller' => $controller, 'action' => $action, 'arrLngs' => $arrLngs));
+        $this->render('lng_menu',array('current' => $current_lng, 'controller' => $controller,
+         'action' => $action, 'arrLngs' => $arrLngs,'params' => $_GET));
     }
 }

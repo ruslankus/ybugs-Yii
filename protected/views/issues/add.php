@@ -45,8 +45,9 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/common.js',CClientScript::POS_E
                             <span>Upload</span>
                             <!--<input id="uploadBtn" type="file" class="upload" /> -->
                             <?php echo $form->fileField($form_mdl,'files',
-                                    array('id'=> 'uploadBtn','class' => 'upload'));?>
-                        </div>	   
+                                    array('id'=> 'uploadBtn','class' => 'upload'));?>                                 
+                        </div>
+                        <?php echo $form->error($form_mdl, 'files'); ?>  	   
                     </div>
                 </div>
                 <div class="form-group clearfix">
