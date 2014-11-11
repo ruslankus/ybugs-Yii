@@ -15,5 +15,18 @@ class ExtUsers extends Users
         
         return $data;
     }
+    
+    public function getUserRoles(){
+        $sql = "SELECT * FROM user_roles";
+        
+        $con = $this->dbConnection;
+        $data=$con->createCommand($sql)->queryAll();
+        $arrSelect = array('' => Trl::t()->getLabel('Select role'));
+        foreach ($data as $row){
+            $arrSelect[$row['id']] = $row['name'];
+        }
+        
+        return $arrSelect;
+    }
 }
 

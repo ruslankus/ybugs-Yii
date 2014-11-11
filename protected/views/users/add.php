@@ -1,46 +1,56 @@
-<?php /* @var $this UsersController */ ?>
-<?php /* @var $form_mdl UserForm */ ?>
-<?php /* @var $form CActiveForm */ ?>
-<?php /* @var $roles UserRoles */ ?>
-
-<?php $form=$this->beginWidget('CActiveForm', array('id' =>'login-form','enableAjaxValidation'=>false,'htmlOptions'=>array())); ?>
-
-<?php echo $form->label($form_mdl,'login'); ?>:<br>
-<?php echo $form->textField($form_mdl,'login');?>
-<?php echo $form->error($form_mdl,'login'); ?>
-
-<hr>
-
-<?php echo $form->label($form_mdl,'password'); ?>:<br>
-<?php echo $form->textField($form_mdl,'password');?>
-<?php echo $form->error($form_mdl,'password'); ?>
-
-<hr>
-
-<?php echo $form->label($form_mdl,'name'); ?>:<br>
-<?php echo $form->textField($form_mdl,'name');?>
-<?php echo $form->error($form_mdl,'name'); ?>
-
-<hr>
-
-<?php echo $form->label($form_mdl,'surname'); ?>:<br>
-<?php echo $form->textField($form_mdl,'surname');?>
-<?php echo $form->error($form_mdl,'surname'); ?>
-
-<hr>
-
-<?php echo $form->label($form_mdl,'email'); ?>:<br>
-<?php echo $form->textField($form_mdl,'email');?>
-<?php echo $form->error($form_mdl,'email'); ?>
-
-<hr>
-
-<?php echo $form->label($form_mdl,'role');?>:<br>
-<?php echo $form->dropDownList($form_mdl,'role',$roles);?>
-<?php echo $form->error($form_mdl,'role'); ?>
-
-<hr>
-
-<input type="submit">
-
-<?php $this->endWidget(); ?>
+            <div class="col-md-10 content-holder" id="add-issue">
+            	<div class="form-holder">
+                	<h2>Add user</h2>
+                    <form method="post" action="#">
+                    <?php $form=$this->beginWidget('CActiveForm'); ?>
+                        <div class="form-group clearfix">
+                            <label class="col-md-2">User login </label>
+                            <div class="col-md-9">
+                                <input id="title" type="text" class="form-control" name="title">
+                                <div class="errorMessage"> This is error</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group clearfix">
+                            <label class="col-md-2">User name </label>
+                            <div class="col-md-9">
+                                <input id="title" type="text" class="form-control" name="title">
+                                <div class="errorMessage"> This is error</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group clearfix">
+                            <label class="col-md-2">User surname </label>
+                            <div class="col-md-9">
+                                <input id="title" type="text" class="form-control" name="title">
+                                <div class="errorMessage"> This is error</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group clearfix">
+                            <label class="col-md-2">User mail </label>
+                            <div class="col-md-9">
+                                <input id="title" type="text" class="form-control" name="title">
+                                <div class="errorMessage"> This is error</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group clearfix">
+                            
+                            <?php echo $form->label($form_mdl,'role',array('class' => 'col-md-2'))?>
+                            <div class="col-md-9">
+                            
+                            <?php echo $form->dropDownList($form_mdl,'role',$roles,
+                                    array('class' => 'form-control','id' => 'select'));?>
+                            <?php echo $form->error($form_mdl,'role')?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group clearfix">
+                        	<div class="col-md-offset-2 col-md-9 btn-holder">
+                            	<button class="btn btn-sm btn-success" type="submit"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Add user</button>
+                            </div>
+                        </div>            
+                    <?php $this->endWidget();?>
+                </div><!--/form-holde -->
+            </div><!--/content-holder-->

@@ -164,8 +164,8 @@ class UsersController extends Controller
         $form = new UserForm();
 
         //array of roles
-        $roles = UserRoles::model()->arrayForListing();
-
+        $roles = ExtUsers::model()->getUserRoles();
+       
         //if post given
         if($_POST['UserForm'])
         {
