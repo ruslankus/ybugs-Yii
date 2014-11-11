@@ -7,7 +7,7 @@ class ExtUsers extends Users
     }
     
     public function getUser($id){
-        $sql = "SELECT users.name FROM users
+        $sql = "SELECT users.name,users.id FROM users
             WHERE users.id = " . (int)$id;
         
         $con = $this->dbConnection;

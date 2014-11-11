@@ -1,37 +1,37 @@
-            <div class="col-md-10 content-holder" id="add-issue">
+            <div class="col-md-10 content-holder" id="add-user">
             	<div class="form-holder">
                 	<h2>Add user</h2>
-                    <form method="post" action="#">
-                    <?php $form=$this->beginWidget('CActiveForm'); ?>
+                   <?php $form=$this->beginWidget('CActiveForm'); ?>
                         <div class="form-group clearfix">
-                            <label class="col-md-2">User login </label>
-                            <div class="col-md-9">
-                                <input id="title" type="text" class="form-control" name="title">
-                                <div class="errorMessage"> This is error</div>
+                        
+                            <?php echo $form->label($form_mdl,'login',array('class' => 'col-md-2'))?>
+                            <div class="col-md-9">                                
+                                <?php echo $form->textField($form_mdl,'login',array('class'=>'form-control'));?>
+                                <?php echo $form->error($form_mdl,'login');?>
                             </div>
                         </div>
                         
                         <div class="form-group clearfix">
-                            <label class="col-md-2">User name </label>
+                             <?php echo $form->label($form_mdl,'name',array('class' => 'col-md-2'))?>
                             <div class="col-md-9">
-                                <input id="title" type="text" class="form-control" name="title">
-                                <div class="errorMessage"> This is error</div>
+                                 <?php echo $form->textField($form_mdl,'name',array('class'=>'form-control'));?>
+                                <?php echo $form->error($form_mdl,'name');?>
                             </div>
                         </div>
                         
                         <div class="form-group clearfix">
-                            <label class="col-md-2">User surname </label>
+                            <?php echo $form->label($form_mdl,'surname',array('class' => 'col-md-2'))?>
                             <div class="col-md-9">
-                                <input id="title" type="text" class="form-control" name="title">
-                                <div class="errorMessage"> This is error</div>
+                                 <?php echo $form->textField($form_mdl,'surname',array('class'=>'form-control'));?>
+                                 <?php echo $form->error($form_mdl,'surname');?>
                             </div>
                         </div>
                         
                         <div class="form-group clearfix">
-                            <label class="col-md-2">User mail </label>
+                             <?php echo $form->label($form_mdl,'email',array('class' => 'col-md-2'))?>
                             <div class="col-md-9">
-                                <input id="title" type="text" class="form-control" name="title">
-                                <div class="errorMessage"> This is error</div>
+                                <?php echo $form->textField($form_mdl,'email',array('class'=>'form-control'));?>
+                                 <?php echo $form->error($form_mdl,'email');?>
                             </div>
                         </div>
                         

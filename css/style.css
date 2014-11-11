@@ -173,8 +173,6 @@ div.proj-issues {
 
 .act-holder > div:first-child > div:last-child > a {
 	text-transform:uppercase;}
-	
-	
 		
 .act , .project, .form-holder {
 	background-color:white;
@@ -335,7 +333,7 @@ aside > ul > li {
 	margin-top:10px;}
 	
 /*----- resoliutions -------*/
-#issues > h5, #issues > h4, .descrition > span:first-child {
+#issues > h5, #issues > h4 {
 	font-size:16px;
 	font-weight:600;
 	color:#868686;}
@@ -351,9 +349,6 @@ aside > ul > li {
 #issues > h5 > span:last-child {
 	font-weight:400;
 	color:#2e2e2e;}
-	
-.descrition > span {
-	display:block;}
 		
 .condition { 	
 	font-size:16px;
@@ -424,7 +419,7 @@ aside > ul > li {
 		
 
 /*----- add - issue ------*/
-.form-holder > h2 {
+#add-issue .form-holder > h2 {
 	margin:0;
 	font-size:16px;
 	font-weight:600;
@@ -497,5 +492,30 @@ textarea.form-control {
 	font-size:12px;
 	color:red;}
 	
-/*----- add resoliution ----*/
-								
+/*---- user-list ----*/
+.user-setting-holder {
+	padding:10px 30px;
+	background-color:white;
+	margin-bottom:10px;
+	border-radius:5px;
+	box-shadow:1px 1px 2px 0px rgba(50, 50, 50, 0.75);}
+	
+.user-setting-holder > div > div > h2 , .form-holder > h2 {	
+	margin:0;
+	font-size:16px;
+	font-weight:600;
+	color:#004c69;}
+	
+.user-setting-holder > div > div {
+	padding-left:0;
+	padding-right:0;}
+	
+.user-setting-holder > div > div:last-child {
+	text-align:right;}
+	
+.user-setting-holder > table {
+	margin-top:10px;}
+	
+/* --- add - user ---*/
+#add-user input.form-control {
+	width:250px;}	

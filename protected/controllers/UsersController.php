@@ -95,13 +95,7 @@ class UsersController extends Controller
 
         //try find user by ID
         $user = Users::model()->findByPk($id);
-
-        //if not admin, or user not found - no access
-        if(Yii::app()->user->getState('role') != 3 || empty($user))
-        {
-            throw new CHttpException(404);
-        }
-
+       
         //form validator
         $form = new UserForm();
 
@@ -144,7 +138,7 @@ class UsersController extends Controller
         }
 
         //render form
-        $this->render('edit',array('form_mdl' => $form, 'roles' => $roles, 'user' => $user));
+        $this->render('edit_user',array('form_mdl' => $form, 'roles' => $roles, 'user' => $user));
 
     }
 
@@ -169,6 +163,7 @@ class UsersController extends Controller
         //if post given
         if($_POST['UserForm'])
         {
+           
             //get attributes from post
             $form->attributes = $_POST['UserForm'];
 
@@ -178,7 +173,8 @@ class UsersController extends Controller
                 //create new user
                 $user = new Users();
                 $user -> attributes = $form->attributes;
-                $user -> password = md5($form->password); //encode password to md5
+                $user -> password = md5('user1234'); //encode password to md5               
+                $user -> status = 1;                
                 $user -> save();
 
                 //redirect to list
@@ -187,7 +183,7 @@ class UsersController extends Controller
         }
 
         //render form
-        $this->render('add',array('form_mdl' => $form, 'roles' => $roles));
+        $this->render('add_user',array('form_mdl' => $form, 'roles' => $roles));
     }
 
 }

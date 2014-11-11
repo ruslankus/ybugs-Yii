@@ -774,3 +774,269 @@ Stack trace:
 #11 {main}
 REQUEST_URI=/en/users/add
 ---
+2014/11/11 18:59:34 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "login".' in C:\OpenServer\domains\ybugs.local\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\protected\views\users\add_user.php(8): CComponent->__call('login', Array)
+#1 C:\OpenServer\domains\ybugs.local\protected\views\users\add_user.php(8): CActiveForm->login(Object(UserForm), 'login', Array)
+#2 C:\OpenServer\domains\ybugs.local\framework\web\CBaseController.php(126): require('C:\OpenServer\d...')
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\OpenServer\d...', Array, true)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(869): CBaseController->renderFile('C:\OpenServer\d...', Array, true)
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(782): CController->renderPartial('add_user', Array, true)
+#6 C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php(190): CController->render('add_user', Array)
+#7 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): UsersController->actionAdd()
+#8 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('add')
+#12 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('users/add')
+#13 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/en/users/add
+HTTP_REFERER=http://ybugs.local/en/users/add
+---
+2014/11/11 19:31:50 [warning] [application] Failed to set unsafe attribute "currently_updating_user_id" of "Users".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (180)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 19:37:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/edit".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('user/edit')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/en/user/edit/
+HTTP_REFERER=http://ybugs.local/en/users/edit/8
+---
+2014/11/11 19:38:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/edit".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('user/edit')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/en/user/edit/1
+HTTP_REFERER=http://ybugs.local/en/users/edit/8
+---
+2014/11/11 20:09:35 [warning] [application] Failed to set unsafe attribute "password" of "UserForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (116)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:09:35 [warning] [application] Failed to set unsafe attribute "password" of "UserForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (116)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:20:39 [warning] [application] Failed to set unsafe attribute "password" of "UserForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (110)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:22:28 [warning] [application] Failed to set unsafe attribute "password" of "UserForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (110)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:22:37 [warning] [application] Failed to set unsafe attribute "password" of "UserForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (110)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:23:31 [warning] [application] Failed to set unsafe attribute "password" of "UserForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (110)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:23:31 [warning] [application] Failed to set unsafe attribute "currently_updating_user_id" of "Users".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (117)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:23:40 [warning] [application] Failed to set unsafe attribute "password" of "UserForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (110)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:23:40 [warning] [application] Failed to set unsafe attribute "currently_updating_user_id" of "Users".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (117)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:24:27 [warning] [application] Failed to set unsafe attribute "password" of "UserForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (110)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:24:27 [warning] [application] Failed to set unsafe attribute "currently_updating_user_id" of "Users".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (117)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:24:36 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.role" is not defined.' in C:\OpenServer\domains\ybugs.local\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\auth\CWebUser.php(146): CComponent->__get('role')
+#1 C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php(12): CWebUser->__get('role')
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('index')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('main/index')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/en/main/index
+HTTP_REFERER=http://ybugs.local/en/main/login
+---
+2014/11/11 20:25:42 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.role" is not defined.' in C:\OpenServer\domains\ybugs.local\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\auth\CWebUser.php(146): CComponent->__get('role')
+#1 C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php(12): CWebUser->__get('role')
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('index')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('main/index')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/en/main/index
+HTTP_REFERER=http://ybugs.local/en/main/login
+---
+2014/11/11 20:25:46 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.role" is not defined.' in C:\OpenServer\domains\ybugs.local\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\auth\CWebUser.php(146): CComponent->__get('role')
+#1 C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php(12): CWebUser->__get('role')
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('index')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('main/index')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/en/main/index
+---
+2014/11/11 20:25:49 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.role" is not defined.' in C:\OpenServer\domains\ybugs.local\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\auth\CWebUser.php(146): CComponent->__get('role')
+#1 C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php(12): CWebUser->__get('role')
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('index')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('main/index')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/en
+HTTP_REFERER=http://ybugs.local/en/users/list
+---
+2014/11/11 20:25:50 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php:23
+Stack trace:
+#0 [internal function]: UsersController->actionList(NULL)
+#1 C:\OpenServer\domains\ybugs.local\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('list')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('users/list')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/en/users/list
+HTTP_REFERER=http://ybugs.local/en/users/edit/8
+---
+2014/11/11 20:25:53 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.role" is not defined.' in C:\OpenServer\domains\ybugs.local\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\auth\CWebUser.php(146): CComponent->__get('role')
+#1 C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php(12): CWebUser->__get('role')
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('index')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('main/index')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/en
+HTTP_REFERER=http://ybugs.local/en/users/list
+---
+2014/11/11 20:25:58 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.role" is not defined.' in C:\OpenServer\domains\ybugs.local\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\auth\CWebUser.php(146): CComponent->__get('role')
+#1 C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php(12): CWebUser->__get('role')
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('index')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('main/index')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/en/main/index
+---
+2014/11/11 20:26:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logiut".' in C:\OpenServer\domains\ybugs.local\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(270): CController->missingAction('logiut')
+#1 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('logiut')
+#2 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('main/logiut')
+#3 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/en/main/logiut
+---
+2014/11/11 20:42:07 [warning] [application] Failed to set unsafe attribute "currently_updating_user_id" of "Users".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (175)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:45:31 [warning] [application] Failed to set unsafe attribute "currently_updating_user_id" of "Users".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (175)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:46:07 [warning] [application] Failed to set unsafe attribute "password" of "UserForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (110)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:46:07 [warning] [application] Failed to set unsafe attribute "role" of "UserForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (110)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:46:07 [warning] [application] Failed to set unsafe attribute "currently_updating_user_id" of "Users".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (117)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:46:17 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.role" is not defined.' in C:\OpenServer\domains\ybugs.local\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\auth\CWebUser.php(146): CComponent->__get('role')
+#1 C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php(12): CWebUser->__get('role')
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('index')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('main/index')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/en/main/index
+HTTP_REFERER=http://ybugs.local/en/main/login
+---
+2014/11/11 20:48:21 [warning] [application] Failed to set unsafe attribute "currently_updating_user_id" of "Users".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (175)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:48:41 [warning] [application] Failed to set unsafe attribute "password" of "UserForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (110)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:49:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://ybugs.local/en/users/edit/10
+---
+2014/11/11 20:49:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/11 20:49:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/11 20:53:21 [warning] [application] Failed to set unsafe attribute "currently_updating_user_id" of "Users".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (175)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:53:50 [warning] [application] Failed to set unsafe attribute "password" of "UserForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (110)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/11 20:53:50 [warning] [application] Failed to set unsafe attribute "currently_updating_user_id" of "Users".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\UsersController.php (117)
+in C:\OpenServer\domains\ybugs.local\index.php (13)

@@ -13,7 +13,7 @@ class UserForm extends CFormModel
 
     public function rules()
     {
-        $creating = array('login, password, name, surname, role', 'required','message'=>  Trl::t()->getMsg('Please assign value to').' "{attribute}"');
+        $creating = array('login, name, surname, role', 'required','message'=>  Trl::t()->getMsg('Please assign value to').' "{attribute}"');
         $updating = array('login, name, surname, role', 'required','message'=>  Trl::t()->getMsg('Please assign value to').' "{attribute}"');
         $unique = array('login, email', 'unique', 'model_class' => 'Users', 'current_id' => $this->currently_updating_user_id);
 
