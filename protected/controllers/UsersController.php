@@ -185,7 +185,16 @@ class UsersController extends Controller
 
         //render form
         $this->render('add_user',array('form_mdl' => $form, 'roles' => $roles));
+    }//actionAdd
+    
+    
+    
+    public function actionChUserStatus($id = null ){
+        
+        $page = $this->renderPartial('_change_role','',true);
+        echo $page;
     }
+    
 
 }
 
