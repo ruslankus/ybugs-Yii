@@ -494,11 +494,22 @@ textarea.form-control {
 	
 /*---- user-list ----*/
 .user-setting-holder {
-	padding:10px 30px;
+	padding: 5px 0px;
 	background-color:white;
 	margin-bottom:10px;
 	border-radius:5px;
 	box-shadow:1px 1px 2px 0px rgba(50, 50, 50, 0.75);}
+	
+.user-setting-holder > div {
+	padding-right:30px;
+	padding-left:30px;
+	padding-top:10px;}
+	
+.user-setting-holder  div > a.btn {
+	padding-left:30px;
+	padding-right:30px;
+	text-transform:uppercase;}
+		
 	
 .user-setting-holder > div > div > h2 , .form-holder > h2 {	
 	margin:0;
@@ -514,8 +525,69 @@ textarea.form-control {
 	text-align:right;}
 	
 .user-setting-holder > table {
+	margin-bottom:5px;
 	margin-top:10px;}
+	
+table.table > thead  th {
+	border-bottom:none;	
+	font-weight:400;
+	color:#868686;
+	font-size:12px;
+	padding:5px 5px 5px 30px;} 
+	
+	
+.table > tbody > tr > td {
+	color:#2e2e2e;
+	padding-left:30px;
+	border-bottom:none;
+	border-top:none;
+	border-right:1px solid #d2d9de;}
+	
+.table > tbody > tr > td.role {
+	width:18.903%;
+	padding-right:15px;}
+	
+.table > tbody > tr > td.status {
+	width:17.079%;
+	padding-right:15px;}
+		
+.table > tbody > tr > td > * {
+	display:inline-block;}
+	
+.table > tbody > tr > td > span {
+	width:80%;}
+	
+.table > tbody > tr > td > a {
+	text-align:right;
+	width:15%;
+	color:#868686;}
+	
+.table > tbody > tr > td.admin {
+	color:#de0000;}
+	
+.table > tbody > tr:first-child > td {
+	border-top:none;}
+	
+	
+a.btn-edit > span {
+	color:#5bc0de;}
+	
+a.btn-delete > span {
+	color:#d95551;}		
+		
 	
 /* --- add - user ---*/
 #add-user input.form-control {
-	width:250px;}	
+	width:250px;}
+	
+/* --- modals windows --*/
+.modal-header > h4.modal-title {
+	text-align:left;
+	font-size:16px;
+	font-weight:600;
+	color:#004c69;}
+
+.modal-body > label {
+	color:#868686;
+	font-size:12px;
+	font-weight:400;}

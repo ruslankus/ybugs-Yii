@@ -16,6 +16,20 @@ class ExtUsers extends Users
         return $data;
     }
     
+    
+    public function getAllUsers(){
+        $sql = "SELECT users.id, users.login, users.email,users.name, users.surname,
+        users.role as role_id, user_roles.name as role, statusses.name as status
+            FROM users
+            JOIN user_roles ON users.role = user_roles.id
+            JOIN statusses ON users.status = statusses.id";
+            
+        $con = $this->dbConnection;
+        $data=$con->createCommand($sql)->queryAll();
+        
+        return $data;
+    }
+    
     public function getUserRoles(){
         $sql = "SELECT * FROM user_roles";
         

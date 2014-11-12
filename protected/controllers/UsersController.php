@@ -15,19 +15,20 @@ class UsersController extends Controller
      * @param int $id role ID
      * @throws CHttpException
      */
-    public function actionList($id = null)
+    public function actionList()
     {
         //if not admin - no access
         if(Yii::app()->user->getState('role') != 3)
         {
             throw new CHttpException(404);
         }
-
+            
+        $lang_prefix = Yii::app()->language;    
         //get all users filtered by role
-        $users_arr = Users::model()->getArrayByRole($id,null);
-
+        $users_arr = ExtUsers::model()->getAllUsers();
+        
         //render
-        $this->render('list',array('users' => $users_arr));
+        $this->render('list',array('users' => $users_arr, 'lang_prefix' => $lang_prefix));
     }
 
 
