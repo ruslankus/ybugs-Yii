@@ -189,9 +189,11 @@ class UsersController extends Controller
     
     
     
-    public function actionChUserStatus($id = null ){
+    public function actionChUserRoles($id = null ){
         
-        $page = $this->renderPartial('_change_role','',true);
+        $userRoles = ExtUserRoles::model()->getAllRoles();
+        
+        $page = $this->renderPartial('_change_role',array('roles' => $userRoles),true);
         echo $page;
     }
     
