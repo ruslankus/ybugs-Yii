@@ -187,14 +187,44 @@ class UsersController extends Controller
         $this->render('add_user',array('form_mdl' => $form, 'roles' => $roles));
     }//actionAdd
     
+    public function actionChangeRole($id){
+        
+        $objUser = Users::model()->findByPk((int)$id);
+        if(!empty($objUser)){
+            $objUser->role = (int)$_POST['role'];
+            $objUser->update();
+            
+            $this->actionList();
+        }
+    }
+
+
+    public function actionChUserRole($id = null ){
+        $request = Yii::app()->request;
+        if($request->isAjaxRequest){
+            $id = $request->getPost('id');
+            $lang_prefix = Yii::app()->language;
+            $userData = ExtUserRoles::model()->getAllRoles($id);
+        
+            $page = $this->renderPartial('_change_role',array('userData' => $userData,
+                                        'lang_prefix' => $lang_prefix),true);
+            echo $page;
+        }else{
+            throw new CHttpException('404');
+        }
+    }//actionChUserRoles
     
     
-    public function actionChUserRoles($id = null ){
+    public function actionChUserStatus($id = null ){
+        $request = Yii::app()->request;
+        if($request->isAjaxRequest){
+            $id = $request->getPost('id');
+            $lang_prefix = Yii::app()->language;
+            
+            $page = $this->renderPartial('_change_status');
+            echo $page;
+        }
         
-        $userRoles = ExtUserRoles::model()->getAllRoles();
-        
-        $page = $this->renderPartial('_change_role',array('roles' => $userRoles),true);
-        echo $page;
     }
     
 

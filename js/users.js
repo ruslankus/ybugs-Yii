@@ -1,14 +1,17 @@
 $(document).ready(function(e) {
     
     $('.role > a').click(function(e) {
-        var userId = $(this).data('id');
-        loadModal(userId);
+        var userId = $(this).data('user');
+        var action = $(this).data('action');
+        console.log(action);
+        loadModal(userId,action);
+        return false;
     });
 	
 });
 
 
-function loadModal(id){
-    $('.modal-dialog').load('/users/chuserstatus/');
+function loadModal(id,action){
+    $('.modal-dialog').load('/users/chuser'+ action + '/',{id:id});
     $('#changeStatus').modal();
 }

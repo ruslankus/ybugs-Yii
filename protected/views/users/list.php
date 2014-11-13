@@ -39,20 +39,25 @@
                                 
                             	<td class="role admin">
                                     <span><?php echo $user['role']?></span>
-                                    <a href="#" data-user="<?php echo $user['id']?>"">
+                                    <a href="#" data-action="role"  data-user="<?php echo $user['id']?>"">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </a>
                                 </td>
                                 <?php else:?>
                                 <td class="role change-status">
                                     <span><?php echo $user['role']?></span>
-                                    <a href="#" data-user="<?php echo $user['id']?>">
+                                    <a href="#" data-action="role" data-user="<?php echo $user['id']?>">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </a>
                                 </td>
                                 <?php endif;?>
                                 
-                            	<td class="status"><span><?php echo $user['status']?></span> <a href="#" data-toggle="modal" data-target="#changeStatus"><span class="glyphicon glyphicon-edit"></span></a></td>
+                            	<td class="role status">
+                                    <span><?php echo $user['status']?></span> 
+                                    <a href="#" data-toggle="modal" data-action="status" data-user="<?php echo $user['id']?>">
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                    </a>
+                                </td>
                             	<td>
                                     <a href="#" class="btn-edit" title="edit"><span class="glyphicon glyphicon-cog"></span></a>&nbsp;
                                     <a href="#" class="btn-delete" title="delete"><span class="glyphicon glyphicon-trash"></span></a>
