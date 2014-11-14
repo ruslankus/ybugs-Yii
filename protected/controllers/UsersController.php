@@ -194,7 +194,7 @@ class UsersController extends Controller
             $objUser->role = (int)$_POST['role'];
             $objUser->update();
             
-            $this->actionList();
+             $this->redirect('/users/list');
         }
     }//actionChangeRole
     
@@ -205,7 +205,7 @@ class UsersController extends Controller
             $objUser->status = (int)$_POST['status'];
             $objUser->update();  
             
-            $this->actionList();
+            $this->redirect('/users/list');
         }
         
         
