@@ -37,14 +37,14 @@
                             	<td><?php echo $user['email'];?></td>
                                 <?php if($user['role'] == 3):?>
                                 
-                            	<td class="role admin">
+                            	<td class="role action admin">
                                     <span><?php echo $user['role']?></span>
                                     <a href="#" data-action="role"  data-user="<?php echo $user['id']?>"">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </a>
                                 </td>
                                 <?php else:?>
-                                <td class="role change-status">
+                                <td class="role action change-status">
                                     <span><?php echo $user['role']?></span>
                                     <a href="#" data-action="role" data-user="<?php echo $user['id']?>">
                                         <span class="glyphicon glyphicon-edit"></span>
@@ -52,15 +52,17 @@
                                 </td>
                                 <?php endif;?>
                                 
-                            	<td class="role status">
+                            	<td class="role action status">
                                     <span><?php echo $user['status']?></span> 
                                     <a href="#" data-toggle="modal" data-action="status" data-user="<?php echo $user['id']?>">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </a>
                                 </td>
-                            	<td>
+                            	<td class="action">
                                     <a href="#" class="btn-edit" title="edit"><span class="glyphicon glyphicon-cog"></span></a>&nbsp;
-                                    <a href="#" class="btn-delete" title="delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="#" class="btn-delete" title="delete"  data-toggle="modal" data-action="delete" data-user="<?php echo $user['id']?>" >
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </a>
                                 </td>
                             </tr>
                         <?php $n++; endforeach; ?>

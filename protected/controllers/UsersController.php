@@ -207,8 +207,7 @@ class UsersController extends Controller
             
             $this->redirect('/users/list');
         }
-        
-        
+
     }//actionChangeStatus
     
     
@@ -240,6 +239,24 @@ class UsersController extends Controller
             echo $page;
         }
         
+    }//actionChUserStatus
+    
+    public function actionChUserDelete($id = null){
+        $request = Yii::app()->request;
+        $lang_prefix = Yii::app()->language;
+        if($request->isAjaxRequest){
+            $id = $request->getPost('id');
+             $userData = ExtUserStatus::model()->getAllStatuses($id);
+            
+             $page = $this->renderPartial('_delete_user',array('userData' => $userData,'lang_prefix' => $lang_prefix));
+             echo $page;
+             exit();
+        }
+        
+        $objUser = Users::model()->findByPk($id);       
+        $objUser->delete();
+        
+        $this->redirect('/users/list');
     }
     
 

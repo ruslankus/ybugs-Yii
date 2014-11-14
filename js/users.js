@@ -1,6 +1,6 @@
 $(document).ready(function(e) {
     
-    $('.role > a').click(function(e) {
+    $('.action > a').click(function(e) {
         var userId = $(this).data('user');
         var action = $(this).data('action');
         console.log(action);
