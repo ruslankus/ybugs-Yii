@@ -196,9 +196,22 @@ class UsersController extends Controller
             
             $this->actionList();
         }
-    }
-
-
+    }//actionChangeRole
+    
+    
+    public function actionChangeStatus($id){
+        $objUser = Users::model()->findByPk((int)$id);
+        if(!empty($objUser)){
+            $objUser->status = (int)$_POST['status'];
+            $objUser->update();  
+            
+            $this->actionList();
+        }
+        
+        
+    }//actionChangeStatus
+    
+    
     public function actionChUserRole($id = null ){
         $request = Yii::app()->request;
         if($request->isAjaxRequest){
@@ -220,8 +233,10 @@ class UsersController extends Controller
         if($request->isAjaxRequest){
             $id = $request->getPost('id');
             $lang_prefix = Yii::app()->language;
+            $userData = ExtUserStatus::model()->getAllStatuses($id);
             
-            $page = $this->renderPartial('_change_status');
+            $page = $this->renderPartial('_change_status',array('userData' => $userData,
+                                         'lang_prefix' => $lang_prefix),true);
             echo $page;
         }
         
