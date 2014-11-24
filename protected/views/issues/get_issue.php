@@ -1,3 +1,8 @@
+ <?php
+$cs = Yii::app()->clientScript;
+$cs->registerCssFile(Yii::app()->request->baseUrl.'/css/lightbox.css');
+$cs->registerScriptFile(Yii::app()->baseUrl.'/js/lightbox.js',CClientScript::POS_END);
+?>              
             <div class="col-md-10 content-holder" id="issues">
             	<h5><span>Project name:</span> <span><?php echo $arrIssue['project_name']; ?></span></h5>
                    
@@ -6,7 +11,12 @@
                 <p class="condition"><span>Состояние :</span>&nbsp;
                     <span class="badge <?php echo $arrIssue['class_name']?>"><?php echo $arrIssue['status']?></span>
                 </p>
-                
+                <?php if($arrIssue['picture']):?>
+                 <p class="photo">
+                    <span><?php echo Trl::t()->getLabel('Screenshoot');?>: </span>
+                    <a href="/images/uploaded/<?php echo $arrIssue['picture'];?>" data-lightbox="image"><?php echo $arrIssue['picture'];?></a>
+                </p>
+                <?php endif;?>
                 <p class="descrition"><span>Описание проблемы :</span>
                 	<span>
                     <?php echo $arrIssue['description'];?>    

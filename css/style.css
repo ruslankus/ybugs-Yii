@@ -636,7 +636,7 @@ a.btn-delete > span {
 	background-color:#1184c0;}
 	
 /*--- login ----*/
-.form-holder {
+#login > .form-holder {
 	width:477px;
 	margin-top:100px;
 	margin-left:auto;

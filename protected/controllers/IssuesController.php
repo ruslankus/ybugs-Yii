@@ -76,12 +76,13 @@ class IssuesController extends Controller
                     
                     //get uploaded file
                     $file = CUploadedFile::getInstance($form,'files');
+                   
                     //if saved
-                    if($saved && !empty($files))
+                    if($saved && !empty($file))
                     {
                          //generate new name for it
-                        $new_name = uniqid('issue_').'.'.$file_obj->extensionName;
-    
+                        $new_name = uniqid('issue_').'.'.$file->extensionName;
+                       
                         //if saved
                         if($file->saveAs('images/uploaded/'.$new_name))
                         {

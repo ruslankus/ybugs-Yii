@@ -12,7 +12,7 @@ class ExtIssues extends Issues
         
         $sql = "SELECT iss.title, iss.description, prj.name as project_name, users.name as fname,
         users.surname as lname, statusses.name as status, statusses.class_name,iss.id,
-        prio.name as prio
+        prio.name as prio,iss.picture
             FROM issues iss
             JOIN projects prj ON iss.project_id = prj.id
             JOIN users ON iss.user_id = users.id

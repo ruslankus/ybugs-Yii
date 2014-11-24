@@ -235,3 +235,109 @@ Stack trace:
 REQUEST_URI=/lt/main/login
 HTTP_REFERER=http://ybugs.local/en/main/login
 ---
+2014/11/25 00:30:24 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:30:24 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:30:24 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:37:04 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:37:04 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:37:04 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:37:59 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:37:59 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:37:59 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:38:43 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:38:43 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:38:43 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:40:20 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:40:20 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:40:20 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:41:10 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:41:10 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:41:10 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:42:29 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:42:29 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:42:29 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:43:05 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:43:05 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:43:05 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:43:26 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:43:26 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 00:43:26 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 01:04:56 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 01:04:56 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 01:04:56 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in C:\OpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 01:11:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/25 01:11:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
