@@ -18,11 +18,13 @@ class LanguagesController extends Controller
         {
             throw new CHttpException(404);
         }
-
-        $languages = Languages::model()->findAll();
-        $translations = Translations::model()->findAll();
-
-        $this->render('list',array('languages' => $languages,'translations' => $translations));
+        
+        $lang_prefix = Yii::app()->language;
+        $arrSelect = ExtLanguages::model()->selectArray();    
+        $arrLabel = ExtLanguages::model()->getLabels($lang_prefix);
+       
+        $this->render('list',array('arrLabel' => $arrLabel,
+                'arrSelect' => $arrSelect,'lang_prefix' => $lang_prefix));
     }
 
 

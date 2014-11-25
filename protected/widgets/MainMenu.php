@@ -14,7 +14,7 @@ class MainMenu extends CWidget {
             //array('name' => 'issues', 'controller' => 'issues', 'action' => 'index', 'roles' => array(1,2,3)),
             //array('name' => 'resolutions', 'controller' => 'resolutions', 'action' => 'index', 'roles' => array(1,2,3)),
              array('name' => 'user', 'controller' => 'users', 'action' => 'index', 'roles' => array(3)),
-            array('name' => 'settings', 'controller' => 'users', 'action' => 'index', 'roles' => array(3)),
+            array('name' => 'settings', 'controller' => 'languages', 'action' => 'index', 'roles' => array(3)),
            
             
         );
