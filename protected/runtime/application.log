@@ -341,3 +341,241 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2014/11/25 15:54:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/25 17:11:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/25 17:12:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "language/index".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('language/index')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/lt/language
+---
+2014/11/25 17:12:16 [error] [php] include(Translations.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\OpenServer\domains\ybugs.local\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(23): spl_autoload_call()
+#1 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(10): LanguagesController->actionList()
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): LanguagesController->actionIndex()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): LanguagesController->runAction()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): LanguagesController->runActionWithFilters()
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): LanguagesController->run()
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/lt/languages
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (23)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (10)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:41:28 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): UsersController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/lt/users
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:41:28 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): MainController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/lt/main/index
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:41:30 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): MainController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/lt/main/login
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:41:36 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): MainController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:41:45 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): MainController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:41:50 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): MainController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:41:59 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): MainController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:42:03 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): MainController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:45:36 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): MainController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:45:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/25 18:45:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/25 18:46:18 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): MainController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/lt/
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:47:04 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): MainController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:55:59 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): MainController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/25 18:56:01 [error] [php] Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\ybugs.local\protected\models\Languages.php:1) (C:\OpenServer\domains\ybugs.local\framework\web\CHttpRequest.php:1380)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\collections\CMap.php(330): CCookieCollection->add()
+#1 C:\OpenServer\domains\ybugs.local\protected\models\Languages.php(117): CCookieCollection->offsetSet()
+#2 C:\OpenServer\domains\ybugs.local\protected\components\Controller.php(53): SetLanguage()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(359): MainController->__construct()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in C:\OpenServer\domains\ybugs.local\protected\models\Languages.php (117)
+in C:\OpenServer\domains\ybugs.local\protected\components\Controller.php (53)
+in C:\OpenServer\domains\ybugs.local\index.php (13)

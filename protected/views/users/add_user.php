@@ -48,6 +48,9 @@
                         
                         <div class="form-group clearfix">
                         	<div class="col-md-offset-2 col-md-9 btn-holder">
+                                <a href="/<?php echo $lang_prefix ?>/users" type="button" class="btn btn-info btn-sm pull-left" data-dismiss="modal">
+                                    <?php echo Trl::t()->getLabel('close');?>
+                                </a>
                             	<button class="btn btn-sm btn-success" type="submit"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Add user</button>
                             </div>
                         </div>            

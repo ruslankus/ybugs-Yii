@@ -149,6 +149,7 @@ class UsersController extends Controller
      */
     public function actionAdd()
     {
+        $lang_prefix = Yii::app()->language;
         //if not admin - no access
         if(Yii::app()->user->getState('role') != 3)
         {
@@ -184,7 +185,7 @@ class UsersController extends Controller
         }
 
         //render form
-        $this->render('add_user',array('form_mdl' => $form, 'roles' => $roles));
+        $this->render('add_user',array('form_mdl' => $form, 'roles' => $roles,'lang_prefix' => $lang_prefix));
     }//actionAdd
     
     public function actionChangeRole($id){
