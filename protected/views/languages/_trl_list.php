@@ -2,7 +2,7 @@
                         	<form method="post" action="#">
                                 <select data-prefix="<?php echo $lang_prefix?>" id="lng_sel">
                                 <?php foreach($arrSelect as $key => $value):?>
-                                    <?php if($key == $lang_prefix):?>    
+                                    <?php if($key == $select_lng):?>    
                                         <option selected="true" value="<?php echo $key?>"><?php echo $value?></option>
                                     <?php else:?>
                                         <option value="<?php echo $key?>"><?php echo $value?></option> 
