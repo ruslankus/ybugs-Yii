@@ -1,3 +1,8 @@
+ <?php
+$cs = Yii::app()->clientScript;
+$cs->registerScriptFile(Yii::app()->baseUrl.'/js/trans.js',CClientScript::POS_END);
+?> 
+ 
             <div class="col-md-10 content-holder" id="translation">
             <div class="inner-holder">
             	<div class="tr-header clearfix">
@@ -10,7 +15,7 @@
                     <div class="table-holder">
                     	<div class="filters">
                         	<form method="post" action="#">
-                                <select id="lng_sel">
+                                <select data-prefix="<?php echo $lang_prefix?>" id="lng_sel">
                                 <?php foreach($arrSelect as $key => $value):?>
                                     <?php if($key == $lang_prefix):?>    
                                         <option selected="true" value="<?php echo $key?>"><?php echo $value?></option>
@@ -50,7 +55,7 @@
                                     </td>
                                 </tr>
                                 </form>
-                                <?php endforeach;?>
+                                <?php $n++; endforeach;?>
                             	
                             </tbody>
                     	</table>

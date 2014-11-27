@@ -13,18 +13,33 @@ class LanguagesController extends Controller
 
     public function actionList()
     {
-        //if not admin - no access
-        if(Yii::app()->user->getState('role') != 3)
-        {
-            throw new CHttpException(404);
-        }
-        
+        $request = Yii::app()->request;
         $lang_prefix = Yii::app()->language;
         $arrSelect = ExtLanguages::model()->selectArray();    
-        $arrLabel = ExtLanguages::model()->getLabels($lang_prefix);
-       
-        $this->render('list',array('arrLabel' => $arrLabel,
-                'arrSelect' => $arrSelect,'lang_prefix' => $lang_prefix));
+        
+        
+        if($request->isAjaxRequest){
+            
+            $select_lng = $request->getPost('lng');
+            $arrLabel = ExtLanguages::model()->getLabels($select_lng); 
+            $retData = $this->renderPartial('_trl_list',array('arrLabel' => $arrLabel,
+                    'arrSelect' => $arrSelect,'lang_prefix' => $lang_prefix,'select_lng' => $select_lng));
+            echo $retData;
+            exit();
+        }else{
+            
+                  //if not admin - no access 
+            if(Yii::app()->user->getState('role') != 3)
+            {
+                throw new CHttpException(404);
+            }
+            
+            $arrLabel = ExtLanguages::model()->getLabels($lang_prefix);          
+            $this->render('trl_list',array('arrLabel' => $arrLabel,
+                    'arrSelect' => $arrSelect,'lang_prefix' => $lang_prefix));
+            
+        }
+      
     }
 
 
