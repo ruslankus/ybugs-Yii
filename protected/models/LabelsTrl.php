@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'labels_trl':
  * @property integer $id
- * @property integer $translation_id
+ * @property integer $label_id
  * @property integer $language_id
  * @property string $value
  */
@@ -27,11 +27,11 @@ class LabelsTrl extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('translation_id, language_id', 'numerical', 'integerOnly'=>true),
+			array('label_id, language_id', 'numerical', 'integerOnly'=>true),
 			array('value', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, translation_id, language_id, value', 'safe', 'on'=>'search'),
+			array('id, label_id, language_id, value', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,7 +53,7 @@ class LabelsTrl extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'translation_id' => 'Translation',
+			'label_id' => 'Label',
 			'language_id' => 'Language',
 			'value' => 'Value',
 		);
@@ -78,7 +78,7 @@ class LabelsTrl extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('translation_id',$this->translation_id);
+		$criteria->compare('label_id',$this->label_id);
 		$criteria->compare('language_id',$this->language_id);
 		$criteria->compare('value',$this->value,true);
 

@@ -11,7 +11,7 @@ class LanguagesController extends Controller
     }
 
 
-    public function actionList()
+    public function actionList($curr_lng = null)
     {
         $request = Yii::app()->request;
         $lang_prefix = Yii::app()->language;
@@ -34,13 +34,33 @@ class LanguagesController extends Controller
                 throw new CHttpException(404);
             }
             
-            $arrLabel = ExtLanguages::model()->getLabels($lang_prefix);          
+            if(empty($curr_lng)){
+               $curr_lng = $lang_prefix; 
+            }
+            
+            $arrLabel = ExtLanguages::model()->getLabels($curr_lng);          
             $this->render('trl_list',array('arrLabel' => $arrLabel,
-                    'arrSelect' => $arrSelect,'lang_prefix' => $lang_prefix));
+                    'arrSelect' => $arrSelect,'lang_prefix' => $lang_prefix,'select_lng' => $curr_lng));
             
         }
       
-    }
+    }//actionList
+    
+    
+    
+    public function actionSearch(){
+        
+        $lang_prefix = Yii::app()->language;
+        $arrSelect = ExtLanguages::model()->selectArray();  
+        
+        $request = Yii::app()->request;
+        $select_lng = $request->getPost('sel_lng');
+        $search_label = $request->getPost('serch_label');
+        
+        
+        $arrLabel = ExtLanguages::model()->getLabels($select_lng,array('search_label' => $search_label)); 
+        Debug::d($arrLabel);
+    } 
 
 
 
@@ -159,6 +179,26 @@ class LanguagesController extends Controller
 
         //back to list
         $this->redirect(Yii::app()->createUrl('/languages/list'));
+    }
+    
+    
+    /**
+     * Save translation
+     * @param int $id label id
+     * @throws CHttpException
+     */
+    public function actionSave($id = null){
+        
+        $request = Yii::app()->request;
+        $curr_lng = $request->getPost('curr_lng');
+        $value_label = $request->getPost('value');
+        
+        $objLabel = LabelsTrl::model()->findByPk((int)$id);
+       
+        $objLabel->value = $value_label;
+        $objLabel->save();
+         
+        $this->redirect(array('list','curr_lng'=> $curr_lng)); 
     }
 
 

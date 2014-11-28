@@ -756,7 +756,7 @@ a.btn-delete > span {
 	text-align:left;
 	width:40px;}
 	
-#translation .table > tbody > tr > td:nth-child(2) {
+#translation .table > tbody > tr > td:nth-child(2), th.th-label {
 	width:340px;}
 	
 #translation td > input {
@@ -775,5 +775,45 @@ a.btn-delete > span {
 	
 #translation td > a:first-child {
 	margin-left:0;}
+	
+.div-table {
+	width:100%;
+	display:table}
+	
+.div-table > form.tr {
+	margin-bottom:10px;
+	display:table-row;}
+	
+.div-table > form.tr > .td {
+	padding: 5px 0px;
+	display:table-cell;}
+	
+.div-table > form.tr > .td:first-child {
+	border-left:none;
+	text-align:left;
+	width:40px;}
+	
+.div-table > form.tr > .td:nth-child(2) {
+	width:340px;}
+	
+.div-table > form.tr > .td > input {
+	padding-left:10px;
+	height:32px;
+	border:1px solid #d2d9de;			
+	width:100%;}
+	
+	
+.div-table > form.tr > .td:last-child {
+	width:70px;
+	text-align:right;}
+	
+.div-table > form.tr > .td > a {
+	color:#4cb115; }
+		
+.div-table > form.tr > .td > a:last-child {
+	margin-left:10px;
+	color:#d9534f; }	
+	
+			
 			
 		

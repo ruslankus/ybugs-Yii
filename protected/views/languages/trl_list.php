@@ -14,10 +14,10 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/trans.js',CClientScript::POS_EN
                 </div><!--tr-header  -->
                     <div class="table-holder">
                     	<div class="filters">
-                        	<form method="post" action="#">
-                                <select data-prefix="<?php echo $lang_prefix?>" id="lng_sel">
+                        	<form method="post" action="/<?echo $lang_prefix?>/languages/search">
+                                <select name="sel_lng" data-prefix="<?php echo $lang_prefix?>" id="lng_sel">
                                 <?php foreach($arrSelect as $key => $value):?>
-                                    <?php if($key == $lang_prefix):?>    
+                                    <?php if($key == $select_lng):?>     
                                         <option selected="true" value="<?php echo $key?>"><?php echo $value?></option>
                                     <?php else:?>
                                         <option value="<?php echo $key?>"><?php echo $value?></option> 
@@ -29,8 +29,8 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/trans.js',CClientScript::POS_EN
                                 <a href="#" class="btn btn-sm btn-info">Add Label </a>
                         	
                             
-                            	<input type="text" placeholder="serch label" />
-                                <button class="btn btn-sm btn-info"><span class="glyphicon glyphicon-search"></span>Search</button>
+                            	<input type="text" name="serch_label" placeholder="serch label" />
+                                <button type="submit" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-search"></span>Search</button>
                             </form>
                         </div>
                         <table class="table">
@@ -42,23 +42,26 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/trans.js',CClientScript::POS_EN
                                 	<th>action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <?php $n = 1;  foreach($arrLabel as $row):?>
-                            	<form>
-                            	<tr>
-                                	<td><?php echo $n; ?></td>
-                                    <td><?php echo $row['label'];?></td>
-                                    <td><input type="text" value="<?php echo $row['value']?>" /></td>
-                                    <td>
-                                    	<a href="#"><span class="glyphicon glyphicon-floppy-disk"></span></a> 
-                                        <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
-                                    </td>
-                                </tr>
-                                </form>
-                                <?php $n++; endforeach;?>
-                            	
-                            </tbody>
-                    	</table>
+                         </table>   
+                            
+                        <div class="div-table">
+                            <?php $n = 1;  foreach($arrLabel as $row):?> 
+                        	<form class="tr" method="post" action="/<?echo $lang_prefix ?>/languages/save/<?php echo $row['id']?>">
+                            	<span class="td"><?php echo $n; ?></span>
+                                <span class="td">
+                                    <?php echo $row['label'];?>
+                                    <input type="hidden" name="curr_lng" value="<?php echo $select_lng; ?>" />
+                                </span>
+                                <span class="td"><input type="text" name="value" value="<?php echo $row['value']?>" /></span>
+                                <span class="td">
+                                    <button type="submin"><span class="glyphicon glyphicon-floppy-disk"></span></button> 
+                                    <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+	                            </span>
+                            </form>
+                             <?php $n++; endforeach;?>
+                        </div>
+                            
+                            
                     </div><!--/table-holder -->
              </div>       	
             </div><!--/content-holder-->

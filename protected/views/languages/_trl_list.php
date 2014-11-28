@@ -27,20 +27,24 @@
                                 	<th>action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <?php $n = 1;  foreach($arrLabel as $row):?>
-                            	<form>
-                            	<tr>
-                                	<td><?php echo $n; ?></td>
-                                    <td><?php echo $row['label'];?></td>
-                                    <td><input type="text" value="<?php echo $row['value']?>" /></td>
-                                    <td>
-                                    	<a href="#"><span class="glyphicon glyphicon-floppy-disk"></span></a> 
-                                        <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
-                                    </td>
-                                </tr>
-                                </form>
-                                <?php $n++; endforeach;?>
-                            	
-                            </tbody>
-                    	</table>
+                        </table>
+                        
+                        <div class="div-table">
+                            <?php $n = 1;  foreach($arrLabel as $row):?> 
+                        	<form class="tr" method="post" action="/<?echo $lang_prefix ?>/languages/save/<?php echo $row['id']?>">
+                            	<span class="td"><?php echo $n; ?></span>
+                                <span class="td">
+                                    <?php echo $row['label'];?>
+                                   <input type="hidden" name="curr_lng" value="<? echo $select_lng; ?>" />
+                                </span>
+                                <span class="td"><input type="text" name="value" value="<?php echo $row['value']?>" /></span>
+                                <span class="td">
+                                    <button type="submin"><span class="glyphicon glyphicon-floppy-disk"></span></button> 
+                                    <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+	                            </span>
+                            </form>
+                             <?php $n++; endforeach;?>
+                        </div>    
+                        
+                            
+                            
