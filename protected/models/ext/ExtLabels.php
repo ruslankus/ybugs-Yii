@@ -55,7 +55,6 @@ Class ExtLabels extends Labels
             
         }
         
-        Debug::d($sql);
         $con->createCommand($sql)->execute();
         $labelTrl[] = $con->getLastInsertID('labels_trl');
         /*

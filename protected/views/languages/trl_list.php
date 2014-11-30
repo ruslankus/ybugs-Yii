@@ -6,10 +6,11 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/trans.js',CClientScript::POS_EN
             <div class="col-md-10 content-holder" id="translation">
             <div class="inner-holder">
             	<div class="tr-header clearfix">
-                	<div class="col-md-6"><h2>Header</h2></div>
+                	<div class="col-md-6"><h2><?php echo Trl::t()->getLabel('lables tranlation')?></h2></div>
                 	<div class="col-md-6 btns-holder">
-                    	<a class="btn btn-sm btn-success passive">Messages</a>&nbsp;
-                        <a class="btn btn-sm btn-success "> Labels</a>
+                        <a class="btn btn-sm btn-success passive"><?php echo Trl::t()->getLabel('languages')?></a>&nbsp;
+                    	<a class="btn btn-sm btn-success passive"><?php echo Trl::t()->getLabel('messages')?></a>&nbsp;
+                        <a class="btn btn-sm btn-success "> <?php echo Trl::t()->getLabel('labels')?></a>
                     </div>
                 </div><!--tr-header  -->
                     <div class="table-holder">
@@ -37,9 +38,9 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/trans.js',CClientScript::POS_EN
                         	<thead>
                              	<tr>
                                 	<th>#</th>
-                                	<th>labels</th>
-                                	<th>translation</th>
-                                	<th>action</th>
+                                	<th><?php echo Trl::t()->getLabel('labels')?></th>
+                                	<th><?php echo Trl::t()->getLabel('translations')?></th>
+                                	<th><?php echo Trl::t()->getLabel('actions')?></th>
                                 </tr>
                             </thead>
                          </table>   
@@ -54,8 +55,12 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/trans.js',CClientScript::POS_EN
                                 </span>
                                 <span class="td"><input type="text" name="value" value="<?php echo $row['value']?>" /></span>
                                 <span class="td">
-                                    <button type="submin"><span class="glyphicon glyphicon-floppy-disk"></span></button> 
-                                    <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+                                     <button class="btn-save-lbl" type="submit">
+                                        <span class="glyphicon glyphicon-floppy-disk"></span>
+                                    </button>  
+                                    <a class="lbl-delete" data-id="<?php echo $row['label_id']?>" data-prefix="<?php echo $lang_prefix ?>" data-label="<?php echo $row['label']?>" href="#">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </a>
 	                            </span>
                             </form>
                              <?php $n++; endforeach;?>

@@ -24,6 +24,27 @@ $(document).ready(function(e) {
         }
        
       });
+      
+      
+      $('#translation').on('click','a.lbl-delete',function(){
+         var prefix = $(this).data('prefix');
+         var labelId = $(this).data('id');
+         var labelName = $(this).data('label');
+         
+         loadDeleteModal(prefix,labelId,labelName);
+        
+     });
+     
+     $('#translation').on('click','.btn-save-lbl',function(){
+        var search = $("#search_label").val();
+        if(search != '' ){
+            fakeInput(this,search)
+        }
+       
+     });
+     
+      
+      
 	
 });
 
@@ -42,4 +63,21 @@ function loadModal(prefix){
     $('.modal-dialog').load('/'+ prefix +'/languages/addlabel');
     $('.modal').modal('show');
 
+}//loadModal
+
+function loadDeleteModal(prefix,labelId,labelName){
+     $('.modal-dialog').load('/'+ prefix +'/languages/dellabel',{id : labelId, name: labelName});
+     $('.modal').modal('show')
+}//loadDeleteModal
+
+function fakeInput(obj,search){
+    var nodeInput = "<input type='hidden' name='search-text' value='"+ search +"' />" ;
+    var formObj = $(obj).parent().parent();
+    $(formObj).append(nodeInput);
+    
+  
 }
+
+
+
+

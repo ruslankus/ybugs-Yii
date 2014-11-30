@@ -31,7 +31,7 @@
                         
                         <div class="div-table">
                             <?php $n = 1;  foreach($arrLabel as $row):?> 
-                        	<form class="tr" method="post" action="/<?echo $lang_prefix ?>/languages/save/<?php echo $row['id']?>">
+                        	<form class="tr" method="post" action="/<?php echo $lang_prefix ?>/languages/save/<?php echo $row['id']?>">
                             	<span class="td"><?php echo $n; ?></span>
                                 <span class="td">
                                     <?php echo $row['label'];?>
@@ -39,8 +39,12 @@
                                 </span>
                                 <span class="td"><input type="text" name="value" value="<?php echo $row['value']?>" /></span>
                                 <span class="td">
-                                    <button type="submin"><span class="glyphicon glyphicon-floppy-disk"></span></button> 
-                                    <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <button class="btn-save-lbl" type="submit">
+                                        <span class="glyphicon glyphicon-floppy-disk"></span>
+                                    </button> 
+                                    <a class="lbl-delete" data-id="<?php echo $row['label_id']?>" data-prefix="<?php echo $lang_prefix ?>" data-label="<?php echo $row['label']?>" href="#">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </a>
 	                            </span>
                             </form>
                              <?php $n++; endforeach;?>

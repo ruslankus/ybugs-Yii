@@ -11,7 +11,7 @@ class LanguagesController extends Controller
     }
 
 
-    public function actionList($curr_lng = null)
+    public function actionList($curr_lng = null,$search = null)
     {
         $request = Yii::app()->request;
         $lang_prefix = Yii::app()->language;
@@ -41,9 +41,11 @@ class LanguagesController extends Controller
                $curr_lng = $lang_prefix; 
             }
             
-            $arrLabel = ExtLanguages::model()->getLabels($curr_lng);          
+            $arrLabel = ExtLanguages::model()->getLabels($curr_lng, array('search_label' => $search));
+                      
             $this->render('trl_list',array('arrLabel' => $arrLabel,
-                    'arrSelect' => $arrSelect,'lang_prefix' => $lang_prefix,'select_lng' => $curr_lng));
+                    'arrSelect' => $arrSelect,'lang_prefix' => $lang_prefix,'select_lng' => $curr_lng,
+                    'search_val' => $search)); 
             
         }
       
@@ -76,17 +78,18 @@ class LanguagesController extends Controller
      * @throws CHttpException
      */
     public function actionSave($id = null){
-        
+       
         $request = Yii::app()->request;
         $curr_lng = $request->getPost('curr_lng');
         $value_label = $request->getPost('value');
+        $search_text = $request->getPost('search-text');
         
         $objLabel = LabelsTrl::model()->findByPk((int)$id);
        
         $objLabel->value = $value_label;
         $objLabel->save();
          
-        $this->redirect(array('list','curr_lng'=> $curr_lng)); 
+        $this->redirect(array('list','curr_lng'=> $curr_lng, 'search' => $search_text)); 
     }//actionSave
     
     
@@ -106,6 +109,32 @@ class LanguagesController extends Controller
             
             $this->redirect(array('list')); 
         }
+    }
+    
+    
+    /**
+     * Delete Label
+     * @param $id - int label ID
+     */
+    public function actionDelLabel($id = null){
+        $lang_prefix = Yii::app()->language;
+        $request = Yii::app()->request;
+        
+         if($request->isAjaxRequest){
+            $id = $request->getPost('id');
+            $name = $request->getPost('name');
+            
+            $retData = $this->renderPartial('_delete_label_modal',array('lang_prefix' =>$lang_prefix,
+                        'id'=>$id,'label_name' => $name));
+            echo $retData;
+            exit();
+         }else{
+            $objLabel = Labels::model()->findByPk($id);
+            $objLabel->delete();
+            
+            $this->redirect(array('list'));
+         }
+        
     }
 
 
