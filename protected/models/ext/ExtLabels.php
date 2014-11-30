@@ -71,5 +71,19 @@ Class ExtLabels extends Labels
         return true;
     }
     
+    public function deleteLabel($id){
+        $sql = "PRAGMA foreign_keys = ON";
+        
+        $con = $this->dbConnection;
+        $con->createCommand($sql)->execute();
+        
+        $sql = "DELETE FROM labels
+                WHERE id = ".(int)$id;
+        
+        $con->createCommand($sql)->execute();
+        
+        return true;
+    }
+    
        
 }

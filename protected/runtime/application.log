@@ -1279,3 +1279,11 @@ Stack trace:
 REQUEST_URI=/users/chuserundefined/
 HTTP_REFERER=http://ybugs.local/ru/users
 ---
+2014/11/30 21:58:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---

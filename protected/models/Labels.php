@@ -7,6 +7,9 @@
  * @property integer $id
  * @property string $label
  * @property integer $status
+ *
+ * The followings are the available model relations:
+ * @property LabelsTrl[] $labelsTrls
  */
 class Labels extends CActiveRecord
 {
@@ -42,6 +45,7 @@ class Labels extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'labelsTrls' => array(self::HAS_MANY, 'LabelsTrl', 'label_id'),
 		);
 	}
 

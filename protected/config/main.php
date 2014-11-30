@@ -61,6 +61,9 @@ return array(
 
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/main.db',
+                        'initSQLs'=>array(
+                                'PRAGMA foreign_keys = ON',
+                        ),
 		),
 
 		// uncomment the following to use a MySQL database

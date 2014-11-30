@@ -8,6 +8,9 @@
  * @property integer $label_id
  * @property integer $language_id
  * @property string $value
+ *
+ * The followings are the available model relations:
+ * @property Labels $label
  */
 class LabelsTrl extends CActiveRecord
 {
@@ -43,6 +46,7 @@ class LabelsTrl extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'label' => array(self::BELONGS_TO, 'Labels', 'label_id'),
 		);
 	}
 

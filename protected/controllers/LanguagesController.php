@@ -131,6 +131,7 @@ class LanguagesController extends Controller
          }else{
             $objLabel = Labels::model()->findByPk($id);
             $objLabel->delete();
+            //ExtLabels::model()->deleteLabel($id);
             
             $this->redirect(array('list'));
          }
