@@ -142,6 +142,16 @@ div.proj-issues {
 	color:#8b8b8b;
 	margin-bottom:5px;}
 	
+.create-prj-btn-holder {
+	padding-right:0;
+	margin-bottom:15px;
+	text-align:right;}
+	
+.create-prj-btn-holder > a {
+	text-transform:uppercase;}
+	
+		
+	
 	
 	
 /*---- activities ------*/

@@ -15,7 +15,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/trans.js',CClientScript::POS_EN
                 </div><!--tr-header  -->
                     <div class="table-holder">
                     	<div class="filters">
-                        	<form method="post" action="/<?echo $lang_prefix?>/languages/search">
+                        	<form method="post" action="/<?php echo $lang_prefix?>/languages/search">
                                 <select name="sel_lng" data-prefix="<?php echo $lang_prefix?>" id="lng_sel">
                                 <?php foreach($arrSelect as $key => $value):?>
                                     <?php if($key == $select_lng):?>     
@@ -47,7 +47,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/trans.js',CClientScript::POS_EN
                             
                         <div class="div-table">
                             <?php $n = 1;  foreach($arrLabel as $row):?> 
-                        	<form class="tr" method="post" action="/<?echo $lang_prefix ?>/languages/save/<?php echo $row['id']?>">
+                        	<form class="tr" method="post" action="/<?php echo $lang_prefix ?>/languages/save/<?php echo $row['id']?>">
                             	<span class="td"><?php echo $n; ?></span>
                                 <span class="td">
                                     <?php echo $row['label'];?>

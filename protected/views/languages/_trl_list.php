@@ -1,5 +1,5 @@
 	<div class="filters">
-                        	<form method="post" action="/<?echo $lang_prefix?>/languages/search">
+                        	<form method="post" action="/<?php echo $lang_prefix?>/languages/search">
                                 <select name="sel_lng" data-prefix="<?php echo $lang_prefix?>" id="lng_sel">
                                 <?php foreach($arrSelect as $key => $value):?>
                                     <?php if($key == $select_lng):?>    
@@ -35,7 +35,7 @@
                             	<span class="td"><?php echo $n; ?></span>
                                 <span class="td">
                                     <?php echo $row['label'];?>
-                                   <input type="hidden" name="curr_lng" value="<? echo $select_lng; ?>" />
+                                   <input type="hidden" name="curr_lng" value="<?php echo $select_lng; ?>" />
                                 </span>
                                 <span class="td"><input type="text" name="value" value="<?php echo $row['value']?>" /></span>
                                 <span class="td">

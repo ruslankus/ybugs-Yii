@@ -1287,3 +1287,30 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2014/11/30 23:40:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "<".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('<')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/%3C?echo%20$lang_prefix?%3E/languages/search
+HTTP_REFERER=http://ybugs.local/en/languages/list
+---
+2014/11/30 23:40:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "<".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('<')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/%3C?echo%20$lang_prefix?%3E/languages/search
+HTTP_REFERER=http://ybugs.local/en/languages/list
+---
+2014/11/30 23:42:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "<".' in /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/AMPPS/www/ybugs.local/framework/web/CWebApplication.php(141): CWebApplication->runController('<')
+#1 /Applications/AMPPS/www/ybugs.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ybugs.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/%3C?echo%20$lang_prefix%20?%3E/languages/save/35
+HTTP_REFERER=http://ybugs.local/en/languages/search
+---
