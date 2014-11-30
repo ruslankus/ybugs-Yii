@@ -26,10 +26,10 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/trans.js',CClientScript::POS_EN
                                 
                                 </select>
                                 
-                                <a href="#" class="btn btn-sm btn-info">Add Label </a>
+                               <a href="#" data-prefix="<?php echo $lang_prefix?>" class="add-label btn btn-sm btn-info">Add Label </a>
                         	
                             
-                            	<input type="text" name="serch_label" placeholder="serch label" />
+                            	<input id="search_label" type="text" name="serch_label" placeholder="serch label" value="<?php echo $search_val;?>" />
                                 <button type="submit" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-search"></span>Search</button>
                             </form>
                         </div>
@@ -63,6 +63,17 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/js/trans.js',CClientScript::POS_EN
                             
                             
                     </div><!--/table-holder -->
-             </div>       	
+             </div>
+             
+             <div class="modal-holder">
+                <div class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        
+                        <!--/ modal goes here -->
+                    
+                    </div><!--/modal-dialog -->
+                </div><!-- /addLabelRole -->
+             </div><!--/modal-holder -->  
+              	
             </div><!--/content-holder-->
 

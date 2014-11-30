@@ -999,3 +999,118 @@ Stack trace:
 REQUEST_URI=/ru/languages/save/28
 HTTP_REFERER=http://ybugs.local/ru/languages/
 ---
+2014/11/29 20:13:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/29 20:22:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/29 20:22:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/29 22:13:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "undefined/languages/addlabel".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('undefined/langu...')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/undefined/languages/addlabel
+HTTP_REFERER=http://ybugs.local/ru/languages
+---
+2014/11/29 22:14:55 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "CHttpRequest.isAjaxReaquest".' in C:\OpenServer\domains\ybugs.local\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(98): CComponent->__get('isAjaxReaquest')
+#1 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): LanguagesController->actionAddLabel()
+#2 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('addlabel')
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('languages/addla...')
+#7 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/ru/languages/addlabel
+HTTP_REFERER=http://ybugs.local/ru/languages
+---
+2014/11/30 01:10:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/30 01:10:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/30 02:23:48 [error] [system.db.CDbCommand] Error in preparing SQL: INSERT INTO labels ('label')
+	    VALUES :label
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtLabels.php (45)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (105)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/30 02:23:48 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near ":label": syntax error. The SQL statement executed was: INSERT INTO labels ('label')
+	    VALUES :label.
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtLabels.php (45)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (105)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/30 02:23:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near ":label": syntax error. The SQL statement executed was: INSERT INTO labels ('label')
+	    VALUES :label' in C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtLabels.php(45): CDbCommand->execute(Array)
+#1 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(105): ExtLabels->addLabel('test_label', Array)
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): LanguagesController->actionAddLabel()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('addlabel')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('languages/addla...')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/en/languages/addlabel
+HTTP_REFERER=http://ybugs.local/en/languages/
+---
+2014/11/30 03:05:35 [error] [system.db.CDbCommand] Error in preparing SQL: INSERT INTO labels_trl ('label_id', 'language_id', 'value') VALUES (13, 1, ' '),(13, 2, ' '),(13, 3, ' ')
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtLabels.php (59)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (105)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/30 03:05:35 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near ",": syntax error. The SQL statement executed was: INSERT INTO labels_trl ('label_id', 'language_id', 'value') VALUES (13, 1, ' '),(13, 2, ' '),(13, 3, ' ').
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtLabels.php (59)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (105)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2014/11/30 03:05:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near ",": syntax error. The SQL statement executed was: INSERT INTO labels_trl ('label_id', 'language_id', 'value') VALUES (13, 1, ' '),(13, 2, ' '),(13, 3, ' ')' in C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtLabels.php(59): CDbCommand->execute()
+#1 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(105): ExtLabels->addLabel('test_label', Array)
+#2 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): LanguagesController->actionAddLabel()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('addlabel')
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('languages/addla...')
+#8 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/en/languages/addlabel
+HTTP_REFERER=http://ybugs.local/en/languages/
+---

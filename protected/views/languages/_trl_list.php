@@ -1,6 +1,6 @@
 	<div class="filters">
-                        	<form method="post" action="#">
-                                <select data-prefix="<?php echo $lang_prefix?>" id="lng_sel">
+                        	<form method="post" action="/<?echo $lang_prefix?>/languages/search">
+                                <select name="sel_lng" data-prefix="<?php echo $lang_prefix?>" id="lng_sel">
                                 <?php foreach($arrSelect as $key => $value):?>
                                     <?php if($key == $select_lng):?>    
                                         <option selected="true" value="<?php echo $key?>"><?php echo $value?></option>
@@ -11,11 +11,11 @@
                                 
                                 </select>
                                 
-                                <a href="#" class="btn btn-sm btn-info">Add Label </a>
+                                <a href="#" data-prefix="<?php echo $lang_prefix?>" class="add-label btn btn-sm btn-info">Add Label </a>
                         	
                             
-                            	<input type="text" placeholder="serch label" />
-                                <button class="btn btn-sm btn-info"><span class="glyphicon glyphicon-search"></span>Search</button>
+                            	<input id="search_label" type="text" name="serch_label" placeholder="serch label" value="<?php echo $search_val;?>" />
+                                <button type="submit" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-search"></span>Search</button>
                             </form>
                         </div>
                         <table class="table">

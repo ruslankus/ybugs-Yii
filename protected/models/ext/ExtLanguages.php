@@ -43,7 +43,16 @@ class ExtLanguages extends Languages
         }
         
         return $retData;       
-    }//selectArray 
+    }//selectArray
+    
+    public function getAllLang(){
+       $sql = "SELECT id,name FROM languages";
+       
+       $con = $this->dbConnection;
+       $retData = $con->createCommand($sql)->queryAll();
+       
+       return $retData;
+    } 
     
     
 }

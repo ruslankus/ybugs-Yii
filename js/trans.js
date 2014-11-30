@@ -7,6 +7,23 @@ $(document).ready(function(e) {
 		 select(this);
 	});
 	
+    //$('a.add-label').click(function(e){});
+    
+    
+     $('#translation').on('click','a.add-label',function(){
+         var prefix = $(this).data('prefix');
+         loadModal(prefix);
+        
+     });
+     
+      $('.modal-dialog').on('click','button.submit',function(){
+        var value = $('#label-input').val();
+        if(value == ''){
+            $('#label-input').next().css('display','block');
+            return false;
+        }
+       
+      });
 	
 });
 
@@ -14,7 +31,15 @@ $(document).ready(function(e) {
 function select(obj){
     
     lng = $(obj).val();
-    prefix = $(obj).data('prefix'); 
+    prefix = $(obj).data('prefix');
+    search_val = $('#search_label').val();  
     
-    $(".table-holder").load('/'+ prefix +'/languages/list',{lng : lng});
+    $(".table-holder").load('/'+ prefix +'/languages/list',{lng : lng, search_val : search_val});
+}//select
+
+
+function loadModal(prefix){
+    $('.modal-dialog').load('/'+ prefix +'/languages/addlabel');
+    $('.modal').modal('show');
+
 }

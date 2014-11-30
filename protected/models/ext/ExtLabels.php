@@ -27,5 +27,50 @@ Class ExtLabels extends Labels
         return $arrLabels;
     }//getLabels
     
+    
+    /**
+     * Function add label for all avialable
+     * languages
+     * @param $label string label
+     * @param $arrLng array all languages in sistem 
+     */
+    public function addLabel($label,$arrLng){
+        
+       $sql = "INSERT INTO labels ('label')
+	    VALUES (:label)";
+        
+        $sql_param[':label'] = $label;
+        
+        $con = $this->dbConnection;
+        $con->createCommand($sql)->execute($sql_param);
+        $labelId = $con->getLastInsertID('labels');
+        
+        $sql = "INSERT INTO labels_trl ('label_id', 'language_id', 'value') VALUES ";
+        foreach($arrLng as $key => $lng){           
+            if($key == 0){
+                $sql .= "($labelId, {$lng['id']}, ' ')";    
+            }else{
+                 $sql .= ",($labelId, {$lng['id']}, ' ')"; 
+            }
+            
+        }
+        
+        Debug::d($sql);
+        $con->createCommand($sql)->execute();
+        $labelTrl[] = $con->getLastInsertID('labels_trl');
+        /*
+        foreach($arrLng as $lng){
+           
+            $sql = "INSERT INTO labels_trl ('label_id', 'language_id', 'value') VALUES ";
+            $sql .= "($labelId, {$lng['id']}, ' ')";
+            
+            $con->createCommand($sql)->execute();
+            $labelTrl[] = $con->getLastInsertID('labels_trl');
+        }
+        */
+        
+        return true;
+    }
+    
        
 }
