@@ -21,7 +21,7 @@ class ProjectsController extends Controller
         
         $arrData = ExtProject::model()->getProjects($user_id,$user_role);
         
-        $this->render('/main/index',array('arrData' => $arrData,'prefix_lng' => $prefix_lng,'role' => $user_role));
+        $this->render('/main/index',array('arrData' => $arrData,'prefix_lng' => $prefix_lng));
     }
 
 
@@ -31,7 +31,6 @@ class ProjectsController extends Controller
      */
     public function actionAdd()
     {
-         $prefix_lng = Yii::app()->language;
         //If user not admin - no access for this page
         if(Yii::app()->user->getState('role') != 3)
         {
@@ -40,7 +39,8 @@ class ProjectsController extends Controller
 
         $form = new ProjectForm();
 
-          
+        $developers = Users::model()->findAllBySql("SELECT * FROM users WHERE role = 2");
+        $users = Users::model()->findAllBySql("SELECT * FROM users WHERE role = 1");
 
         if($_POST['ProjectForm'])
         {
@@ -61,15 +61,36 @@ class ProjectsController extends Controller
                 $project -> status = 1; //Visible
                 $saved = $project -> save();
 
-                
+                //if successfully saved
+                if($saved)
+                {
+                    //foreach selected developers
+                    foreach($developers_arr as $developer_id => $val)
+                    {
+                        //create relation of project and developer
+                        $relation_pu = new ProjectsToUsers();
+                        $relation_pu -> project_id = $project->id;
+                        $relation_pu -> user_id = $developer_id;
+                        $relation_pu -> save();
+                    }
+
+                    //foreach selected user/tester
+                    foreach($users_arr as $user_id => $val)
+                    {
+                        //create relation of project and user/tester
+                        $relation_pu = new ProjectsToUsers();
+                        $relation_pu -> project_id = $project->id;
+                        $relation_pu -> user_id = $user_id;
+                        $relation_pu -> save();
+                    }
+                }
 
                 //go back to list
-                $this->redirect('list');
+                $this->redirect(Yii::app()->createUrl('/projects/list'));
             }
         }
 
-        $this->render('add',array('form_mdl' => $form, 'users' => $users, 'developers' => $developers,
-                        'prefix_lng' => $prefix_lng));
+        $this->render('add',array('form_mdl' => $form, 'users' => $users, 'developers' => $developers));
     }
 
     /**

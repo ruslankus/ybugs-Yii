@@ -1,41 +1,31 @@
-<?php /* @var $this ProjectsController */ ?>
-<?php /* @var $form CActiveForm */ ?>
-<?php /* @var $form_mdl ProjectForm */ ?>
-<?php /* @var $users Users[] */ ?>
-<?php /* @var $developers Users[] */ ?>
-
-<?php $form=$this->beginWidget('CActiveForm', array('id' =>'login-form','enableAjaxValidation'=>false,'htmlOptions'=>array('class'=>'clearfix'))); ?>
-
-<?php echo $form->label($form_mdl,'name'); ?>:<br>
-<?php echo $form->textField($form_mdl,'name');?>
-<?php echo $form->error($form_mdl,'name'); ?>
-
-<hr>
-
-<?php echo $form->label($form_mdl,'description'); ?>:<br>
-<?php echo $form->textArea($form_mdl,'description') ?>
-<?php echo $form->error($form_mdl,'description'); ?>
-
-<hr>
-
-<?php echo $form->label($form_mdl,'developers') ?>:<br>
-<?php foreach($developers as $developer): ?>
-    <label><?php echo $developer->name.' '.$developer->surname; ?></label>
-    <input type="checkbox" name="ProjectForm[developers][<?php echo $developer->id; ?>]"><br>
-<?php endforeach; ?>
-<?php echo $form->error($form_mdl,'developers'); ?>
-
-<hr>
-
-<?php echo $form->label($form_mdl,'users') ?>:<br>
-<?php foreach($users as $user): ?>
-    <label><?php echo $user->name.' '.$user->surname; ?></label>
-    <input type="checkbox" name="ProjectForm[users][<?php echo $user->id; ?>]"><br>
-<?php endforeach; ?>
-<?php echo $form->error($form_mdl,'users'); ?>
-
-<hr>
-
-<input type="submit">
-
-<?php $this->endWidget(); ?>
+    <div class="col-md-10 content-holder" id="add-project">
+    	<div class="form-holder">
+        	<h2>Add project</h2>
+           <?php $form=$this->beginWidget('CActiveForm', array('enableAjaxValidation'=>false)); ?>
+                <div class="form-group clearfix">
+                    <?php echo $form->label($form_mdl,'name',array('class' => 'col-md-2'))?>
+                    <div class="col-md-9">
+                        <?php echo $form->textField($form_mdl,'name',array('class'=>'form-control'));?>
+                        <?php echo $form->error($form_mdl,'name');?>
+                    </div>
+                </div>
+                
+                <div class="form-group clearfix">
+                    <?php echo $form->label($form_mdl,'description',array('class' => 'col-md-2'))?>
+                    <div class="col-md-9">
+                        <?php echo $form->textArea($form_mdl,'description',array('class'=>'form-control'));?>
+                         <?php echo $form->error($form_mdl,'description');?>
+                    </div>
+                </div>
+                
+    
+                
+                <div class="form-group clearfix">
+                	<div class="col-md-offset-2 col-md-9 btn-holder">
+                        <a href="/<?php echo $prefix_lng ?>" type="button" class="btn btn-info btn-sm pull-left" data-dismiss="modal">Close</a>
+                    	<button class="btn btn-sm btn-success" type="submit"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Add project</button>
+                    </div>
+                </div>            
+           <?php $this->endWidget(); ?>
+        </div><!--/form-holde -->
+    </div><!--/content-holder-->

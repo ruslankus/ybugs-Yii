@@ -1,14 +1,14 @@
             <div class="col-md-10 content-holder" id="index">
-                
+                <?php if($role == 3):?>
                 <div class="clearfix">
                     <div class="create-prj-btn-holder  col-md-push-6  col-md-6">
-                        <a href="#" class=" pull-right btn btn-success btn-sm">
+                        <a href="/<?php echo $prefix_lng;?>/projects/add" class=" pull-right btn btn-success btn-sm">
                             <span class="glyphicon glyphicon-plus-sign"></span>
                             Create Project
                         </a>
                     </div>
                 </div>
-                
+                <?php endif;?>
                 <div class="projects-holder">                    
                    
                     <?php foreach($arrData as $row):?>

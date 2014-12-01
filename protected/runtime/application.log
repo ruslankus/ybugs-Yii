@@ -1314,3 +1314,101 @@ Stack trace:
 REQUEST_URI=/%3C?echo%20$lang_prefix%20?%3E/languages/save/35
 HTTP_REFERER=http://ybugs.local/en/languages/search
 ---
+2014/12/01 17:14:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\newOpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\newOpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/12/01 17:21:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "project/add".' in C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('project/add')
+#1 C:\newOpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\newOpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/en/project/add
+HTTP_REFERER=http://ybugs.local/en/main/index
+---
+2014/12/01 17:53:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\newOpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\newOpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/12/01 17:53:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\newOpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\newOpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/12/01 18:14:58 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\newOpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\newOpenServer\domains\ybugs.local\index.php (13)
+2014/12/01 18:14:58 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in C:\newOpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\newOpenServer\domains\ybugs.local\index.php (13)
+2014/12/01 18:14:58 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in C:\newOpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\newOpenServer\domains\ybugs.local\index.php (13)
+2014/12/01 19:43:58 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\newOpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\newOpenServer\domains\ybugs.local\index.php (13)
+2014/12/01 19:44:06 [warning] [application] Failed to set unsafe attribute "files" of "IssueForm".
+in C:\newOpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (63)
+in C:\newOpenServer\domains\ybugs.local\index.php (13)
+2014/12/01 19:44:06 [warning] [application] Failed to set unsafe attribute "files" of "Issues".
+in C:\newOpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\newOpenServer\domains\ybugs.local\index.php (13)
+2014/12/01 19:44:06 [warning] [application] Failed to set unsafe attribute "priority" of "Issues".
+in C:\newOpenServer\domains\ybugs.local\protected\controllers\IssuesController.php (69)
+in C:\newOpenServer\domains\ybugs.local\index.php (13)
+2014/12/01 19:45:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "chuserundefined".' in C:\newOpenServer\domains\ybugs.local\framework\web\CController.php:483
+Stack trace:
+#0 C:\newOpenServer\domains\ybugs.local\framework\web\CController.php(270): CController->missingAction('chuserundefined')
+#1 C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('chuserundefined')
+#2 C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('users/chuserund...')
+#3 C:\newOpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\newOpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/users/chuserundefined/
+HTTP_REFERER=http://ybugs.local/en/users
+---
+2014/12/01 19:46:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "chuserundefined".' in C:\newOpenServer\domains\ybugs.local\framework\web\CController.php:483
+Stack trace:
+#0 C:\newOpenServer\domains\ybugs.local\framework\web\CController.php(270): CController->missingAction('chuserundefined')
+#1 C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('chuserundefined')
+#2 C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('users/chuserund...')
+#3 C:\newOpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\newOpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/users/chuserundefined/
+HTTP_REFERER=http://ybugs.local/en/users
+---
+2014/12/01 19:59:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "chuserundefined".' in C:\newOpenServer\domains\ybugs.local\framework\web\CController.php:483
+Stack trace:
+#0 C:\newOpenServer\domains\ybugs.local\framework\web\CController.php(270): CController->missingAction('chuserundefined')
+#1 C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('chuserundefined')
+#2 C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('users/chuserund...')
+#3 C:\newOpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\newOpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/users/chuserundefined/
+HTTP_REFERER=http://ybugs.local/en/users
+---
+2014/12/01 20:09:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "chuserundefined".' in C:\newOpenServer\domains\ybugs.local\framework\web\CController.php:483
+Stack trace:
+#0 C:\newOpenServer\domains\ybugs.local\framework\web\CController.php(270): CController->missingAction('chuserundefined')
+#1 C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('chuserundefined')
+#2 C:\newOpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('users/chuserund...')
+#3 C:\newOpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\newOpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/users/chuserundefined/
+HTTP_REFERER=http://ybugs.local/ru/users
+---

@@ -13,7 +13,7 @@ class MainController extends Controller
         
         $arrData = ExtProject::model()->getProjects($user_id,$user_role);
         
-        $this->render('index',array('arrData' => $arrData,'prefix_lng' => $prefix_lng));
+        $this->render('index',array('arrData' => $arrData,'prefix_lng' => $prefix_lng, 'role' => $user_role));
     }
 
     /**
