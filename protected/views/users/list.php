@@ -59,7 +59,7 @@
                                     </a>
                                 </td>
                             	<td class="action">
-                                    <a href="#" class="btn-edit" title="edit"><span class="glyphicon glyphicon-cog"></span></a>&nbsp;
+                                    <a href="/<?php echo $lang_prefix?>/users/addprj/<?php echo $user['id']?>" class="btn-edit" title="edit"><span class="glyphicon glyphicon-cog"></span></a>&nbsp;
                                     <a href="#" class="btn-delete" title="delete"  data-toggle="modal" data-action="delete" data-user="<?php echo $user['id']?>" >
                                         <span class="glyphicon glyphicon-trash"></span>
                                     </a>

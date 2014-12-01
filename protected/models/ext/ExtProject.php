@@ -12,7 +12,7 @@ class ExtProject extends Projects
             $sql = "SELECT * FROM projects";
         }else{
             
-            $sql = "SELECT projects.* FROM projects_to_users pr_to_us
+            $sql = "SELECT pr_to_us.id as rel_id, projects.* FROM projects_to_users pr_to_us
                         JOIN projects ON pr_to_us.project_id = projects.id
                         WHERE pr_to_us.user_id = ".(int)$user_id;  
                                     
@@ -23,6 +23,17 @@ class ExtProject extends Projects
         
         return $data;
     }//getProjects
+    
+    
+    public function getAllProjects(){
+            
+         $sql = "SELECT * FROM projects";
+         
+        $con = $this->dbConnection;
+        $retData=$con->createCommand($sql)->queryAll();
+        
+        return $retData;
+    }
     
     
     public function getProject($id){

@@ -82,6 +82,19 @@ class UsersController extends Controller
 
         //list
         $this->redirect(Yii::app()->createUrl('/users/list'));
+    }//action restore
+    
+    
+    /**
+     * Function for adding project to user
+     */
+    public function actionAddPrj($id){
+        
+        $arrAllPrj = ExtProject::model()->getAllProjects();
+        $arrUsrPrj = ExtProject::model()->getProjects($id);
+        
+        Debug::d($arrUsrPrj);
+        $this->render('add_project_to_user');
     }
 
 
@@ -258,7 +271,9 @@ class UsersController extends Controller
         $objUser->delete();
         
         $this->redirect('/users/list');
-    }
+    }// actionChUserDelete
+    
+    
     
 
 }
