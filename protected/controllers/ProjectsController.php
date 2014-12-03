@@ -85,13 +85,18 @@ class ProjectsController extends Controller
         
         if($request->isAjaxRequest){
             
-            $prjData = ExtProject::model()->getPrjName(id);
+            $prjData = ExtProject::model()->getPrjName($id);
             
-            $data = $this->renderPartial('_delete_project_modal',array('prjData' => $prjData));
+            $data = $this->renderPartial('_delete_project_modal',array('prjData' => $prjData, 
+                        'lang_prefix' => $prefix_lng));
             echo $data;
             exit();
         }else{
             
+            $objPrj = ExtProject::model()->findByPk($id);
+            $objPrj->delete();
+            
+            $this->redirect(array('list'));
         }
     }    
 

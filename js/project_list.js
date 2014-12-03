@@ -2,8 +2,8 @@ $(document).ready(function(e) {
     
 	$(".prj-del").click(function(e) {
        var projectId  = $(this).data('prj');
-       
-       loadDeleteModal()
+       var prefix = $(this).data('prefix');
+       loadDeleteModal(prefix,projectId);
        
        return false;
     });
@@ -12,6 +12,6 @@ $(document).ready(function(e) {
 
 
 function loadDeleteModal(prefix,projectId){
-     $('.modal-dialog').load('/'+ prefix +'/project/del',{id : projectId});
-     $('.modal').modal('show')
+     $('.modal-dialog').load('/'+ prefix +'/projects/del/'+ projectId);
+     $('.modal').modal('show');
 }//loadDeleteModal

@@ -3,6 +3,10 @@ body {
 	
 body p {
 	color:#2e2e2e;}
+	
+/* -- aside -- */
+aside.list-projects {
+	min-height:100px;}	
 
 header > nav, #main-container {
 	max-width:1200px;
