@@ -87,14 +87,47 @@ class UsersController extends Controller
     
     /**
      * Function for adding project to user
+     * @param $id - int User Id
      */
     public function actionAddPrj($id){
         
+        $request = Yii::app()->request;
+       
+        $lang_prefix = Yii::app()->language;
+        
+        if($request->isPostRequest){
+            
+           
+            $project_id = $request->getPost('prj_id');
+            $objPrjToUsr = new ProjectsToUsers();
+            $objPrjToUsr->user_id = $id;
+            $objPrjToUsr->project_id = $project_id;
+            $objPrjToUsr->save();
+            
+             $this->redirect(array('addprj','id'=>$id)); 
+        }
+          
+        
         $arrAllPrj = ExtProject::model()->getAllProjects();
         $arrUsrPrj = ExtProject::model()->getProjects($id);
-        
-        Debug::d($arrUsrPrj);
-        $this->render('add_project_to_user');
+               
+        $this->render('add_project_to_user',array('arrAllPrj' => $arrAllPrj,'lang_prefix' => $lang_prefix,'user_id' => $id,
+        'arrUsrPrj' => $arrUsrPrj));
+    }
+    
+    
+    /**
+     * Function for deleting relation user-project
+     * @param $id Relation Id;
+     */
+    public function actionRemPrj($id){
+        $objPrj = ProjectsToUsers::model()->findByPk((int)$id);
+        if(!empty($objPrj)){
+            $user_id = $objPrj->user_id;
+            $objPrj->delete();
+            
+            $this->redirect(array('addprj','id'=>$user_id));
+        }
     }
 
 
