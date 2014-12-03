@@ -70,7 +70,7 @@ class ProjectsController extends Controller
 
         $this->render('add',array('form_mdl' => $form, 'users' => $users, 'developers' => $developers,
                         'prefix_lng' => $prefix_lng));
-    }
+    }//add
 
     /**
      * Deletes project and relations with users
@@ -79,32 +79,20 @@ class ProjectsController extends Controller
      */
     public function actionDel($id)
     {
-        /* @var $project Projects */
-        /* @var $relations ProjectsToUsers[] */
-
-        //find project by id
-        $project = Projects::model()->findByPk($id);
-
-        //if project found ad user has access to delete
-        if(!empty($project) && Yii::app()->getUser()->getState('role') != 1)
-        {
-            //firstly - delete all relations with users (developers and testers)
-            $relations = ProjectsToUsers::model()->findAllBySql('SELECT * FROM '.ProjectsToUsers::model()->tableName().' WHERE project_id = '.$project->id);
-            foreach($relations as $relation)
-            {
-                $relation->delete();
-            }
-
-            //secondly - delete project
-            $project->deleteAllIssuesAndResolutionsOfProject();
-            $project->delete();
-
-            //go back to list
-            $this->redirect(Yii::app()->createUrl('/projects/list'));
+        $prefix_lng = Yii::app()->language;
+        
+        $request = Yii::app()->request;
+        
+        if($request->isAjaxRequest){
+            
+            $prjData = ExtProject::model()->getPrjName(id);
+            
+            $data = $this->renderPartial('_delete_project_modal',array('prjData' => $prjData));
+            echo $data;
+            exit();
+        }else{
+            
         }
-        else
-        {
-            throw new CHttpException(404);
-        }
-    }
+    }    
+
 }

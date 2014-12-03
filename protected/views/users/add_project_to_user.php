@@ -1,7 +1,11 @@
+<?php
+    $cs = Yii::app()->clientScript;
+    $cs->registerScriptFile(Yii::app()->baseUrl.'/js/users.js',CClientScript::POS_END);
+?> 
             <div class="col-md-10 content-holder" id="project-to-user">
                 <div class="inner-holder clearfix">
                 
-                    <h4>Add projects to user: <strong>Vasia Piupkin</strong> </h4>
+                    <h4>Add projects to user: <strong><?php echo $userData['name']?> <?php echo $userData['surname']?></strong> </h4>
                     
                     <div class="filter-holder clearfix">
                         <div class="col-md-6">
@@ -35,7 +39,9 @@
                                         <input type="hidden" value="<?php echo $prj['id']?>" name="prj_id" />
                                     </span><!--/td -->
                                     <span class="td">
-                                        <button class="btn btn-success btn-xs"><span class="glyphicon glyphicon-arrow-right"></span></button>
+                                        <button data-prj="<?php echo $prj['id']?>" class="btn-add-prj btn btn-success btn-xs">
+                                            <span class="glyphicon glyphicon-arrow-right"></span>
+                                        </button>
                                     </span><!--/td -->
                                 </form>
                             <?php $n++; endforeach; ?>                        
@@ -53,7 +59,7 @@
                                 </thead>
                                 <tbody>
                                 <?php $n = 1; foreach($arrUsrPrj as $prj):?>    
-                                    <tr>
+                                    <tr id="pr_<?php echo $prj['id']?>">
                                         <td><?php echo $n?></td>
                                         <td><?php echo $prj['name'];?></td>
                                         <td>
@@ -67,5 +73,8 @@
                             </table>
                         </div><!--/ r-t-holder -->
                     </div><!-- /tables-holder -->
+                    <div class="btn-back-holder">
+                    	<a href="/<?php echo $lang_prefix?>/users/list" class="btn btn-info btn-sm">Back</a>
+                    </div><!--/ btn-back-holder -->
                 </div><!--/inner-holder -->
         	</div><!--/content-holder / project-to-user -->        

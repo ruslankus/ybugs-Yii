@@ -1,4 +1,4 @@
-  <?php
+<?php
     $cs = Yii::app()->clientScript;
     $cs->registerScriptFile(Yii::app()->baseUrl.'/js/users.js',CClientScript::POS_END);
 ?> 
@@ -39,14 +39,14 @@
                                 
                             	<td class="role action admin">
                                     <span><?php echo $user['role']?></span>
-                                    <a href="#" data-action="role"  data-user="<?php echo $user['id']?>"">
+                                    <a href="#" class="user-act" data-action="role"  data-user="<?php echo $user['id']?>"">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </a>
                                 </td>
                                 <?php else:?>
                                 <td class="role action change-status">
                                     <span><?php echo $user['role']?></span>
-                                    <a href="#" data-action="role" data-user="<?php echo $user['id']?>">
+                                    <a href="#" class="user-act" data-action="role" data-user="<?php echo $user['id']?>">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </a>
                                 </td>
@@ -54,13 +54,13 @@
                                 
                             	<td class="role action status">
                                     <span><?php echo $user['status']?></span> 
-                                    <a href="#" data-toggle="modal" data-action="status" data-user="<?php echo $user['id']?>">
+                                    <a href="#" class="user-act" data-toggle="modal" data-action="status" data-user="<?php echo $user['id']?>">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </a>
                                 </td>
                             	<td class="action">
                                     <a href="/<?php echo $lang_prefix?>/users/addprj/<?php echo $user['id']?>" class="btn-edit" title="edit"><span class="glyphicon glyphicon-cog"></span></a>&nbsp;
-                                    <a href="#" class="btn-delete" title="delete"  data-toggle="modal" data-action="delete" data-user="<?php echo $user['id']?>" >
+                                    <a href="#" class="btn-delete user-act" title="delete"  data-toggle="modal" data-action="delete" data-user="<?php echo $user['id']?>" >
                                         <span class="glyphicon glyphicon-trash"></span>
                                     </a>
                                 </td>

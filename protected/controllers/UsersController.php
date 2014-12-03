@@ -106,13 +106,22 @@ class UsersController extends Controller
             
              $this->redirect(array('addprj','id'=>$id)); 
         }
+        
+        $userData = ExtUserRoles::model()->getUserRole($id);
+        //if user admin
+        if($userData['role_id'] == 3){
+            
+            $this->render('user_admin',array('lang_prefix' => $lang_prefix,'userData' => $userData));
+        }else{            
+            $arrAllPrj = ExtProject::model()->getAllProjects();
+            $arrUsrPrj = ExtProject::model()->getProjects($id);
+               
+            $this->render('add_project_to_user',array('arrAllPrj' => $arrAllPrj,'lang_prefix' => $lang_prefix,'user_id' => $id,
+            'arrUsrPrj' => $arrUsrPrj, 'userData' => $userData));
+        }
           
         
-        $arrAllPrj = ExtProject::model()->getAllProjects();
-        $arrUsrPrj = ExtProject::model()->getProjects($id);
-               
-        $this->render('add_project_to_user',array('arrAllPrj' => $arrAllPrj,'lang_prefix' => $lang_prefix,'user_id' => $id,
-        'arrUsrPrj' => $arrUsrPrj));
+        
     }
     
     

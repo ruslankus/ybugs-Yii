@@ -1,3 +1,8 @@
+<?php
+    $cs = Yii::app()->clientScript;
+    $cs->registerScriptFile(Yii::app()->baseUrl.'/js/project_list.js',CClientScript::POS_END);
+?>
+
             <div class="col-md-10 content-holder" id="index">
                 <?php if($role == 3):?>
                 <div class="clearfix">
@@ -20,7 +25,9 @@
                             </div>
                             <div class="col-md-4">
 								<a href="#" title="edit"><span class="glyphicon glyphicon-cog"></span></a>                            
-								<a href="#" title="delete"><span class="glyphicon glyphicon-trash"></span></a>                            
+								<a href="#" class="prj-del" data-prj="<?php echo $row['id'];?>" data-prefix="<?php echo $prefix_lng;?>" title="delete">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>                            
                             </div>
                         </div><!--/act-top -->
                         <div class="project-bottom clearfix">
@@ -33,4 +40,15 @@
                     </div><!--/project -->
                     <?php endforeach;?>
             	</div><!--/act-holder -->
+                
+                <div class="modal-holder">
+                    <div class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            
+                            <!--/ modal goes here -->
+                        
+                        </div><!--/modal-dialog -->
+                    </div><!-- /addLabelRole -->
+                </div><!--/modal-holder -->  
+                
         </div> <!--/content -holder -->  

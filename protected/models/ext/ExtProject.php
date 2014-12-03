@@ -63,6 +63,20 @@ class ExtProject extends Projects
     }
     
     
+    public function getPrjName($id){
+        
+        $sql = "SELECT t1.name, t1.id	
+            FROM projects t1             
+            WHERE t1.id = ".(int)$id;
+        
+        $con = $this->dbConnection;
+        //getting projects array
+        $retData=$con->createCommand($sql)->queryRow();
+        
+        return $retData;
+    }
+    
+    
 }
 
 
