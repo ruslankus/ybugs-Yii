@@ -25,17 +25,41 @@ class IssuesController extends Controller
 
         }
 
-        
-        //render list
-    }
+      
+    } //render list
     
+    
+    public function actionDelRes($id){
+        $prefix_lng = Yii::app()->language;
+        $request = Yii::app()->request;
+        
+        if($request->isAjaxRequest){
+            $issue = $request->getPost('issue');
+            $data = $this->renderPartial('_delete_res',array('res_id' => $id, 
+                    'prefix_lng' => $prefix_lng, 'issue' => $issue),true);
+            echo $data;
+            exit();
+        }else{
+            $issue = $request->getPost('issue');
+            $objRes = Resolutions::model()->findByPk($id);
+            $objRes->delete();
+            
+            $this->redirect(array('getissue','id' => $issue));
+        }
+    }
+
+
     
     public function actionGetissue($id = null){
           
          $prefix_lng = Yii::app()->language;
+         $user_id = Yii::app()->user->id;
+         $userData = ExtUserRoles::model()->getUserRole($user_id);
+         
          $arrIssue = ExtIssues::model()->getIssue($id);
-        
-         $this->render('get_issue',array('arrIssue' => $arrIssue,'prefix_lng' => $prefix_lng));
+         
+         $this->render('get_issue',array('arrIssue' => $arrIssue,'prefix_lng' => $prefix_lng,
+                       'userData' => $userData ));
     }
 
 
