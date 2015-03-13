@@ -177,3 +177,372 @@ Stack trace:
 REQUEST_URI=/issues/delres/15
 HTTP_REFERER=http://ybugs.local/en/issues/getissue/23
 ---
+2015/03/13 18:22:34 [error] [system.db.CDbCommand] Error in preparing SQL: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php (55)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (246)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (276)
+2015/03/13 18:22:34 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: t1.id. The SQL statement executed was: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC.
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php (55)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (246)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (276)
+2015/03/13 18:22:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: t1.id. The SQL statement executed was: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC' in C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php(55): CDbCommand->queryAll(true, Array)
+#2 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(246): ExtMessage->getMessagesArr('en', Array)
+#3 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(276): LanguagesController->actionListMes()
+#4 [internal function]: LanguagesController->actionMessages(NULL, NULL)
+#5 C:\OpenServer\domains\ybugs.local\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(LanguagesController), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(LanguagesController), Object(ReflectionMethod), Array)
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('messages')
+#11 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('languages/messa...')
+#12 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/en/languages/messages
+HTTP_REFERER=http://ybugs.local/en/languages
+---
+2015/03/13 18:23:44 [error] [system.db.CDbCommand] Error in preparing SQL: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php (55)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (246)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (276)
+2015/03/13 18:23:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: t1.id. The SQL statement executed was: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC.
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php (55)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (246)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (276)
+2015/03/13 18:23:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: t1.id. The SQL statement executed was: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC' in C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php(55): CDbCommand->queryAll(true, Array)
+#2 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(246): ExtMessage->getMessagesArr('en', Array)
+#3 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(276): LanguagesController->actionListMes()
+#4 [internal function]: LanguagesController->actionMessages(NULL, NULL)
+#5 C:\OpenServer\domains\ybugs.local\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(LanguagesController), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(LanguagesController), Object(ReflectionMethod), Array)
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('messages')
+#11 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('languages/messa...')
+#12 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/en/languages/messages
+HTTP_REFERER=http://ybugs.local/en/languages
+---
+2015/03/13 18:24:08 [error] [system.db.CDbCommand] Error in preparing SQL: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php (55)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (246)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (276)
+2015/03/13 18:24:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: t1.id. The SQL statement executed was: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC.
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php (55)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (246)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (276)
+2015/03/13 18:24:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: t1.id. The SQL statement executed was: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC' in C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php(55): CDbCommand->queryAll(true, Array)
+#2 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(246): ExtMessage->getMessagesArr('en', Array)
+#3 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(276): LanguagesController->actionListMes()
+#4 [internal function]: LanguagesController->actionMessages(NULL, NULL)
+#5 C:\OpenServer\domains\ybugs.local\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(LanguagesController), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(LanguagesController), Object(ReflectionMethod), Array)
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('messages')
+#11 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('languages/messa...')
+#12 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/en/languages/messages
+HTTP_REFERER=http://ybugs.local/en/languages
+---
+2015/03/13 18:24:18 [error] [system.db.CDbCommand] Error in preparing SQL: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php (55)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (246)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (276)
+2015/03/13 18:24:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: t1.id. The SQL statement executed was: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC.
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php (55)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (246)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (276)
+2015/03/13 18:24:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: t1.id. The SQL statement executed was: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC' in C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php(55): CDbCommand->queryAll(true, Array)
+#2 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(246): ExtMessage->getMessagesArr('en', Array)
+#3 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(276): LanguagesController->actionListMes()
+#4 [internal function]: LanguagesController->actionMessages(NULL, NULL)
+#5 C:\OpenServer\domains\ybugs.local\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(LanguagesController), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(LanguagesController), Object(ReflectionMethod), Array)
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('messages')
+#11 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('languages/messa...')
+#12 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/en/languages/messages
+HTTP_REFERER=http://ybugs.local/en/languages
+---
+2015/03/13 18:26:53 [error] [system.db.CDbCommand] Error in preparing SQL: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php (55)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (246)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (276)
+2015/03/13 18:26:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: t1.id. The SQL statement executed was: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC.
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php (55)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (246)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (276)
+2015/03/13 18:26:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: t1.id. The SQL statement executed was: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC' in C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php(55): CDbCommand->queryAll(true, Array)
+#2 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(246): ExtMessage->getMessagesArr('en', Array)
+#3 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(276): LanguagesController->actionListMes()
+#4 [internal function]: LanguagesController->actionMessages(NULL, NULL)
+#5 C:\OpenServer\domains\ybugs.local\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(LanguagesController), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(LanguagesController), Object(ReflectionMethod), Array)
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('messages')
+#11 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('languages/messa...')
+#12 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/en/languages/messages
+HTTP_REFERER=http://ybugs.local/en/languages
+---
+2015/03/13 18:28:04 [error] [system.db.CDbCommand] Error in preparing SQL: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php (55)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (246)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (276)
+2015/03/13 18:28:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: t1.id. The SQL statement executed was: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC.
+in C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php (55)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (246)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (276)
+2015/03/13 18:28:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: t1.id. The SQL statement executed was: SELECT t1.id,t2.text,t1.translation, t2.id AS message_id
+            FROM message_trl t1
+            JOIN message t2 ON t1.message_id = t2.id
+            JOIN languages t3 ON t1.language_id = t3.id
+          WHERE t3.prefix = :prefix ORDER BY t1.message_id DESC' in C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\OpenServer\domains\ybugs.local\protected\models\ext\ExtMessage.php(55): CDbCommand->queryAll(true, Array)
+#2 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(246): ExtMessage->getMessagesArr('en', Array)
+#3 C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php(276): LanguagesController->actionListMes()
+#4 [internal function]: LanguagesController->actionMessages(NULL, NULL)
+#5 C:\OpenServer\domains\ybugs.local\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(LanguagesController), Array)
+#6 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(LanguagesController), Object(ReflectionMethod), Array)
+#7 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('messages')
+#11 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('languages/messa...')
+#12 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/en/languages/messages
+HTTP_REFERER=http://ybugs.local/en/languages
+---
+2015/03/13 18:37:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/messages.js".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('js/messages.js')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/messages.js
+HTTP_REFERER=http://ybugs.local/en/languages/messages
+---
+2015/03/13 18:37:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/messages.js".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('js/messages.js')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/messages.js
+HTTP_REFERER=http://ybugs.local/en/languages/messages
+---
+2015/03/13 18:37:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/messages.js".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('js/messages.js')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/messages.js
+HTTP_REFERER=http://ybugs.local/en/languages/messages
+---
+2015/03/13 18:37:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/messages.js".' in C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('js/messages.js')
+#1 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/messages.js
+HTTP_REFERER=http://ybugs.local/en/languages/listMes/curr_lng/en/search/
+---
+2015/03/13 19:10:42 [error] [php] Missing argument 2 for Logs::log_action(), called in C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php on line 46 and defined (C:\OpenServer\domains\ybugs.local\protected\helpers\Logs.php:26)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): MainController->runAction()
+#2 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): MainController->runActionWithFilters()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): MainController->run()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/en/main/login
+in C:\OpenServer\domains\ybugs.local\protected\helpers\Logs.php (26)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php (46)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2015/03/13 19:12:26 [error] [php] fopen(C:\OpenServer\domains\ybugs.locallogs/log.txt) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory (C:\OpenServer\domains\ybugs.local\protected\helpers\Logs.php:28)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): MainController->actionLogin()
+#1 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): MainController->runAction()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): MainController->runActionWithFilters()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): MainController->run()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/en/main/login
+in C:\OpenServer\domains\ybugs.local\protected\helpers\Logs.php (28)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php (46)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2015/03/13 19:14:50 [error] [php] fopen(C:\OpenServer\domains\ybugs.local/logs/log.txt) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory (C:\OpenServer\domains\ybugs.local\protected\helpers\Logs.php:28)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): MainController->actionLogin()
+#1 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): MainController->runAction()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): MainController->runActionWithFilters()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): MainController->run()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/en/main/login
+in C:\OpenServer\domains\ybugs.local\protected\helpers\Logs.php (28)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php (46)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2015/03/13 19:17:35 [error] [php] fopen(C:\OpenServer\domains\ybugs.local\logs\log.txt) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory (C:\OpenServer\domains\ybugs.local\protected\helpers\Logs.php:28)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): MainController->actionLogin()
+#1 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): MainController->runAction()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): MainController->runActionWithFilters()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): MainController->run()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/en/main/login
+in C:\OpenServer\domains\ybugs.local\protected\helpers\Logs.php (28)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\MainController.php (46)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2015/03/13 19:36:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getlog".' in C:\OpenServer\domains\ybugs.local\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(270): CController->missingAction('getlog')
+#1 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): CController->run('getlog')
+#2 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController('languages/getlo...')
+#3 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\ybugs.local\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/en/languages/getlog
+---
+2015/03/13 19:36:52 [error] [php] file() [<a href='function.file'>function.file</a>]: Filename cannot be empty (C:\OpenServer\domains\ybugs.local\protected\helpers\Logs.php:42)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): LanguagesController->actiongetLogs()
+#1 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): LanguagesController->runAction()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): LanguagesController->runActionWithFilters()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): LanguagesController->run()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/en/languages/getlogs
+in C:\OpenServer\domains\ybugs.local\protected\helpers\Logs.php (42)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (564)
+in C:\OpenServer\domains\ybugs.local\index.php (13)
+2015/03/13 19:39:40 [error] [php] file(C:\OpenServer\domains\ybugs.localDSlogsDSlog.txt) [<a href='function.file'>function.file</a>]: failed to open stream: No such file or directory (C:\OpenServer\domains\ybugs.local\protected\helpers\Logs.php:43)
+Stack trace:
+#0 C:\OpenServer\domains\ybugs.local\framework\web\actions\CInlineAction.php(49): LanguagesController->actiongetLogs()
+#1 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(286): LanguagesController->runAction()
+#3 C:\OpenServer\domains\ybugs.local\framework\web\CController.php(265): LanguagesController->runActionWithFilters()
+#4 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(282): LanguagesController->run()
+#5 C:\OpenServer\domains\ybugs.local\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\OpenServer\domains\ybugs.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\OpenServer\domains\ybugs.local\index.php(13): CWebApplication->run()
+REQUEST_URI=/en/languages/getlogs
+in C:\OpenServer\domains\ybugs.local\protected\helpers\Logs.php (43)
+in C:\OpenServer\domains\ybugs.local\protected\controllers\LanguagesController.php (564)
+in C:\OpenServer\domains\ybugs.local\index.php (13)

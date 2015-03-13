@@ -1,5 +1,5 @@
     <div class="modal-content">
-        <form method="post" action="/<?php echo $lang_prefix ?>/languages/dellabel/<?php echo $id ?>" >
+        <form method="post" action="/<?php echo $lang_prefix ?>/languages/delMes/<?php echo $id ?>" >
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo Trl::t()->getLabel('close')?></span></button>
                 <h4 class="modal-title"><?php echo Trl::t()->getLabel('delete label')?></h4>

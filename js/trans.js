@@ -18,10 +18,44 @@ $(document).ready(function(e) {
      
       $('.modal-dialog').on('click','button.submit',function(){
         var value = $('#label-input').val();
+        var prefix = $(this).data('prefix');
+
         if(value == ''){
             $('#label-input').next().css('display','block');
             return false;
+        } 
+        else
+        {
+            var link = '/'+ prefix +'/languages/UniqueCeckLabel';
+            $.ajaxSetup({async:false});
+            $.ajax({ type: "post",url:link,data:{label:value}}).done(function(data){
+                
+                obj = jQuery.parseJSON(data);
+
+                if(obj.status=="success")
+                {        
+
+                }
+               
+                if(obj.status=="error")
+                {
+                    console.log(obj);
+                   $('.duplicate').html(obj.err_txt);
+                   $('#label-input').next().css('display','block');
+
+                   return false;
+                    
+                }
+               
+            });
+
+            
         }
+        
+
+       if(obj.status =='error'){
+          return false;
+       }
        
       });
       
@@ -43,8 +77,6 @@ $(document).ready(function(e) {
        
      });
      
-      
-      
 	
 });
 
@@ -77,7 +109,3 @@ function fakeInput(obj,search){
     
   
 }
-
-
-
-

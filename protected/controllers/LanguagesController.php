@@ -17,7 +17,6 @@ class LanguagesController extends Controller
         $lang_prefix = Yii::app()->language;
         $arrSelect = ExtLanguages::model()->selectArray();    
         
-        
         if($request->isAjaxRequest){
             
             $select_lng = $request->getPost('lng');
@@ -42,7 +41,6 @@ class LanguagesController extends Controller
             }
             
             $arrLabel = ExtLanguages::model()->getLabels($curr_lng, array('search_label' => $search));
-                      
             $this->render('trl_list',array('arrLabel' => $arrLabel,
                     'arrSelect' => $arrSelect,'lang_prefix' => $lang_prefix,'select_lng' => $curr_lng,
                     'search_val' => $search)); 
@@ -78,11 +76,10 @@ class LanguagesController extends Controller
      * @throws CHttpException
      */
     public function actionSave($id = null){
-       
         $request = Yii::app()->request;
         $curr_lng = $request->getPost('curr_lng');
-        $value_label = $request->getPost('value');
-        $search_text = $request->getPost('search-text');
+        $value_label = trim($request->getPost('value'));
+        $search_text = trim($request->getPost('search-text'));
         
         $objLabel = LabelsTrl::model()->findByPk((int)$id);
        
@@ -95,6 +92,7 @@ class LanguagesController extends Controller
     
     
     public function actionAddLabel(){
+        
         $lang_prefix = Yii::app()->language;
         $request = Yii::app()->request;
         
@@ -109,6 +107,7 @@ class LanguagesController extends Controller
             
             $this->redirect(array('list')); 
         }
+
     }
     
     
@@ -138,8 +137,163 @@ class LanguagesController extends Controller
         
     }
 
+    public function actionUniqueCeckLabel(){
+        $label = $_POST['label'];
+        if($user = Labels::model()->exists('label=:label',array('label'=>$label)))
+        {
+            $arrJson = array();
+            $arrJson['status'] = "error";
+            $arrJson['err_txt'] = Trl::t()->getMsg("Duplicate error");; 
+            echo json_encode($arrJson);
+        }
+        else
+        {
+            $arrJson['status'] = "success";
+            echo json_encode($arrJson);
+        }
 
 
+    }
+    /* MESSAGES TRANSLATE */ 
+
+  
+    public function actionAddMes(){
+        $lang_prefix = Yii::app()->language;
+        $request = Yii::app()->request;
+        
+        if($request->isAjaxRequest){
+
+            $retData = $this->renderPartial('_add_message_modal',array('lang_prefix' =>$lang_prefix));
+            echo $retData;
+            
+        }else{
+            
+            $label = trim($request->getPost('label_name'));
+            $arrLng = ExtLanguages::model()->getAllLang();
+            ExtMessage::model()->addMessage($label,$arrLng);
+            
+            $this->redirect(array('listMes')); 
+        }
+    }
+  
+    public function actionDelMes($id = null){
+        $lang_prefix = Yii::app()->language;
+        $request = Yii::app()->request;
+        
+         if($request->isAjaxRequest){
+            $id = $request->getPost('id');
+            $name = $request->getPost('name');
+            
+            $retData = $this->renderPartial('_delete_message_modal',array('lang_prefix' =>$lang_prefix,
+                        'id'=>$id,'label_name' => $name));
+            echo $retData;
+            exit();
+         }else{
+            $objMes = Message::model()->findByPk($id);
+
+            $objMes->delete();
+
+            //ExtLabels::model()->deleteLabel($id);
+            
+            $this->redirect(array('listMes'));
+         }
+        
+    }
+
+    public function actionSaveMes($id = null){
+        $request = Yii::app()->request;
+        $curr_lng = $request->getPost('curr_lng');
+        $value_label = trim($request->getPost('translation'));
+        $search_text = trim($request->getPost('search-text'));
+        
+        $objLabel = MessageTrl::model()->findByPk((int)$id);
+       
+        $objLabel->translation = $value_label;
+        $objLabel->save();
+         
+        $this->redirect(array('listMes','curr_lng'=> $curr_lng, 'search' => $search_text)); 
+    }//actionSave
+    
+    public function actionListMes($curr_lng = null,$search = null)
+    {
+        $request = Yii::app()->request;
+        $lang_prefix = Yii::app()->language;
+        $arrSelect = ExtLanguages::model()->selectArray();    
+        
+        if($request->isAjaxRequest){
+            
+            $select_lng = $request->getPost('lng');
+            $search_label = $request->getPost('search_val');
+            
+            $arrLabel = ExtMessage::model()->getMessagesArr($select_lng,array('search_label' => $search_label));
+            $retData = $this->renderPartial('_trlMes_list',array('arrLabel' => $arrLabel,
+                    'arrSelect' => $arrSelect,'lang_prefix' => $lang_prefix,'select_lng' => $select_lng,
+                    'search_val' => $search_label)); 
+            echo $retData;
+            exit();
+        }else{
+            
+                  //if not admin - no access 
+            if(Yii::app()->user->getState('role') != 3)
+            {
+                throw new CHttpException(404);
+            }
+            
+            if(empty($curr_lng)){
+               $curr_lng = $lang_prefix; 
+            }
+            
+            $arrLabel = ExtMessage::model()->getMessagesArr($curr_lng, array('search_label' => $search));
+
+            $this->render('trlMes_list',array('arrLabel' => $arrLabel,
+                    'arrSelect' => $arrSelect,'lang_prefix' => $lang_prefix,'select_lng' => $curr_lng,
+                    'search_val' => $search)); 
+            
+        }
+      
+    }//actionList
+
+    public function actionSearchMes()
+    {
+        
+        $lang_prefix = Yii::app()->language;
+        $arrSelect = ExtLanguages::model()->selectArray();  
+        
+        $request = Yii::app()->request;
+        $select_lng = $request->getPost('sel_lng');
+        $search_label = $request->getPost('serch_label');        
+        
+        $arrLabel = ExtMessage::model()->getMessagesArr($select_lng,array('search_label' => $search_label));
+        
+        $this->render('trlMes_list',array('arrLabel' => $arrLabel,
+                    'arrSelect' => $arrSelect,'lang_prefix' => $lang_prefix,'select_lng' => $select_lng,
+                    'search_val' => $search_label)); 
+        
+    }//actionSearch 
+
+    public function actionMessages($curr_lng = null,$search = null)
+    {
+        $this->actionListMes();
+    }
+
+    public function actionUniqueCeckMessage(){
+        $label = $_POST['label'];
+        
+        if($user = Message::model()->exists('text=:label',array('label'=>$label)))
+        {
+            $arrJson = array();
+            $arrJson['status'] = "error";
+            $arrJson['err_txt'] = Trl::t()->getMsg("Duplicate error");; 
+            echo json_encode($arrJson);
+        }
+        else
+        {
+            $arrJson['status'] = "success";
+            echo json_encode($arrJson);
+        }
+        
+    }
+    
     /* L A N G U A G E S */
 
     /**
@@ -257,9 +411,16 @@ class LanguagesController extends Controller
         $this->redirect(Yii::app()->createUrl('/languages/list'));
     }
     
-    
-  
+    /* by Maxim */
 
+    public function actionLangList()
+    {
+        $lang_prefix = Yii::app()->language;
+        $langs = ExtLanguages::model()->getAllLang();
+        $this->render('lang_list',array('langs' => $langs, 'lang_prefix' => $lang_prefix));
+    }
+  
+  /* by Maxim End */
 
     /* T R A N S L A T I O N S */
 
@@ -393,5 +554,14 @@ class LanguagesController extends Controller
 
         //back to list
         $this->redirect(Yii::app()->createUrl('/languages/list'));
+    }
+    
+    
+    /*-- Logs --*/
+    
+    public function actiongetLogs()
+    {
+        $arrLogs = Logs::inst()->getlog();
+        Debug::d($arrLogs);  
     }
 }

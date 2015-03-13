@@ -116,6 +116,28 @@ class IssuesController extends Controller
                         }
                       
                     }
+                    $arrAdmins = Users::model()->findAllByAttributes(array('role'=>3));
+                    $Arrto = array();
+                    foreach($arrAdmins as $item){
+                        $Arrto[] = $item -> email;
+                    }
+                    $to =  implode(",", $Arrto);
+                    $message = "You have new ISSUE - ".$issue -> title;
+                    $subject = "New ISSUE";
+                    $headers = "From: yii-bugs@local.com";
+                    mail($to,$subject,$message,$headers);
+                    /*
+                    $mail=Yii::app()->Smtpmail;
+                    $mail->SetFrom($from, 'Info');
+                    $mail->Subject    = $subject;
+                    $mail->MsgHTML($message);
+                    $mail->AddAddress($to, "");
+                    if(!$mail->Send()) {
+                        echo "Mailer Error: " . $mail->ErrorInfo;
+                    }else {
+                        echo "Message sent!";
+                    }
+                    */
 
                     //redirect to list of issues filtered by project
                     $this->redirect(Yii::app()->createUrl('/issues/list/',array('id' => $project->id)));

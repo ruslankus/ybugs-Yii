@@ -1,6 +1,6 @@
     
             <div class="modal-content">
-            <form method="post" action="/<?php echo $lang_prefix ?>/languages/addlabel" >
+            <form method="post" action="/<?php echo $lang_prefix ?>/languages/addMes" >
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo Trl::t()->getLabel('close')?></span></button>
                     <h4 class="modal-title"><?php echo Trl::t()->getLabel('add label')?></h4>
@@ -10,7 +10,7 @@
                 	<label class="col-md-4"><?php echo Trl::t()->getLabel('label name')?></label>
                     <div class="col-md-8">
                     	<input id="label-input" name="label_name" class="form-control" type="text" />
-                        <div style="display: none;" class="errorMessage duplicate"><?php echo Trl::t()->getMsg("Enter value");?></div>
+                        <div style="display: none;" class="errorMessage  duplicate"><?php echo Trl::t()->getMsg("Enter value");?></div>
                     </div>
                 </div><!--/modal-body -->
             

@@ -48,9 +48,9 @@ Class ExtLabels extends Labels
         $sql = "INSERT INTO labels_trl ('label_id', 'language_id', 'value') VALUES ";
         foreach($arrLng as $key => $lng){           
             if($key == 0){
-                $sql .= "($labelId, {$lng['id']}, ' ')";    
+                $sql .= "($labelId, {$lng['id']}, '')";    
             }else{
-                 $sql .= ",($labelId, {$lng['id']}, ' ')"; 
+                 $sql .= ",($labelId, {$lng['id']}, '')"; 
             }
             
         }

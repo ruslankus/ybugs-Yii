@@ -22,9 +22,9 @@
                         	<thead>
                              	<tr>
                                 	<th>#</th>
-                                	<th>labels</th>
-                                	<th>translation</th>
-                                	<th>action</th>
+                                	<th><?php echo Trl::t()->getLabel('labels')?></th>
+                                	<th><?php echo Trl::t()->getLabel('translation')?></th>
+                                	<th><?php echo Trl::t()->getLabel('action')?></th>
                                 </tr>
                             </thead>
                         </table>

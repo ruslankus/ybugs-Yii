@@ -42,6 +42,9 @@ class MainController extends Controller
             // validate user input and redirect to the previous page if valid
             if($validation->validate() && $validation->login())
             {
+                //logiruem
+                Logs::inst()->log_action('Logged in');
+                
                 $this->redirect('index');
             }
         }
@@ -54,6 +57,7 @@ class MainController extends Controller
      */
     public function actionLogout()
     {
+        Logs::inst()->log_action('Logged out');
         Yii::app()->user->logout(false);
         $this->redirect(Yii::app()->createUrl('/main/index'));
     }

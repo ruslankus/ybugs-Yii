@@ -230,12 +230,34 @@ class UsersController extends Controller
                 //create new user
                 $user = new Users();
                 $user -> attributes = $form->attributes;
-                $user -> password = md5('user1234'); //encode password to md5               
+                $pass = 'user1234';
+                $user -> password = md5($pass); //encode password to md5               
                 $user -> status = 1;                
                 $user -> save();
 
+                // send login data to user by mail
+
+                $message = "Login: ".$user -> login."\nPassword: ".$pass;
+                $to = $user -> email;
+                $subject = "New user";
+                $headers = "From: yii-bugs@local.com";
+                mail($to,$subject,$message,$headers);
+                /*
+                $mail=Yii::app()->Smtpmail;
+                $mail->SetFrom($from, 'Info');
+                $mail->Subject    = $subject;
+                $mail->MsgHTML($message);
+                $mail->AddAddress($to, "");
+                if(!$mail->Send()) {
+                    echo "Mailer Error: " . $mail->ErrorInfo;
+                }else {
+                    echo "Message sent!";
+                }
+                */
+
                 //redirect to list
-                $this->redirect(Yii::app()->createUrl('/users/list'));
+
+                //$this->redirect(Yii::app()->createUrl('/users/list'));
             }
         }
 
