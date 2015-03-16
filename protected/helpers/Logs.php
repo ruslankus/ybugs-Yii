@@ -19,6 +19,7 @@ class Logs
     
     private function __construct(){
         $this->_logfile = dirname(Yii::app()->request->scriptFile). self::DS ."logs" . self::DS . "log.txt";
+        
         $this->_fname = Yii::app()->user->getState('name');
         $this->_lname = Yii::app()->user->getState('surname');
     }
